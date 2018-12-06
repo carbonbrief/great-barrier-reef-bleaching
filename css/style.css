@@ -60,7 +60,7 @@ body {
     background-repeat: no-repeat;
     position: sticky;
     position: -webkit-sticky;
-    top: 20px;
+    top: calc((100% - 440px)/2);
 }
 
 .text-section {
