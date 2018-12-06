@@ -3,9 +3,9 @@ var chart = d3.select("#chart"),
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
     height = parseInt(chart.style("height"))  - margin.top - margin.bottom;
 
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1).round([10]),
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.15).round([10]),
     y = d3.scaleLinear().rangeRound([height, 0]);
-    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#999999", "#C7432B"]);
+    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#f3f3f3", "#C7432B"]);
 
 var svg = chart.append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -45,9 +45,25 @@ d3.csv("./data/years.csv").then(function (data) {
     .attr("height", function (d) {
         return height - y(Number(d.value));
     })
+    .attr("rx", 3)
+    .attr("ry", 3)
     .attr("fill", function (d) {
         return color(d.mass_bleaching)
     });
+
+    var triangle1 = [
+        {"year": "1998"},
+        {"value": "1"}
+    ];
+
+    svg.append(triangle);
+
+    svg.selectAll(".point")
+    .data(triangle1)
+    .enter().append("path")
+    .attr("class", "point")
+    .attr("d", d3.svg.symbol().type("triangle-up"))
+    .attr("transform", function(d) { return "translate(" + x(d.year) + "," + y(Number(d.value)) + ")"; });
 
 })
 
