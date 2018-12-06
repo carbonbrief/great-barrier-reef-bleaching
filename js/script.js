@@ -11,9 +11,13 @@ $( document ).ready(function() {
         var inview = new Waypoint({
             element: _this,
             handler: function (direction) {
-                $(this.element).animate({'opacity': 1})
+                if (direction == 'down'){
+                    $(this.element).animate({'opacity': 1})
+                } else {
+                    $(this.element).animate({'opacity': 0.2})
+                }
             },
-            offset: '50%'
+            offset: '60%'
         });
 
     });
