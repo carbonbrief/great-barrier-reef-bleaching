@@ -39,8 +39,12 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: 50%;
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
 }
 
 #map {
