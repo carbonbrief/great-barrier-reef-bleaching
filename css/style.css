@@ -68,3 +68,10 @@ body {
     margin-bottom: 10em;
     opacity: 0.2;
 }
+
+#chart {
+    width: 800px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -22,14 +22,6 @@ $( document ).ready(function() {
 
     });
 
-    // $textSection.waypoint(function(direction){
-    //     if (direction == 'down'){
-    //         $textSection.fadeTo(1000, 1);
-    //     } else {
-    //         $textSection.fadeTo(1000, 0.2);
-    //     }
-    // }, {offset: '55%'});
-
     $section2.waypoint(function(direction){
         if (direction == 'down'){
             $map.css("background-image", "url('/img/Test-map-2.png')");
