@@ -1,0 +1,53 @@
+h1 {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 52px;
+    color: #333333;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+h2 {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+    color: #333333;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+p {
+    font-family: "PT Serif", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    font-style: normal;
+    color: #333333;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a {
+    color: #2f8fce;
+    text-decoration: none;
+}
+
+.container {
+    width: 50%;
+}
+
+#map {
+    width: calc(100% - 40px);
+    height: 400px;
+    margin: 20px;
+    background-image: url("/img/Test-map-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
