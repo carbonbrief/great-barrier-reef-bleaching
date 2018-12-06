@@ -39,6 +39,10 @@ a {
     text-decoration: none;
 }
 
+body {
+    margin: 0;
+}
+
 .row {
     display: flex;
 }
@@ -54,4 +58,12 @@ a {
     background-image: url("/img/Test-map-1.png");
     background-size: contain;
     background-repeat: no-repeat;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 20px;
+}
+
+.text-section {
+    margin-top: 5em;
+    margin-bottom: 10em;
 }
