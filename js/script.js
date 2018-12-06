@@ -1,12 +1,37 @@
 const $section1 = $('#section-1');
 const $section2 = $('#section-2');
 const $section3 = $('#section-3');
+const $textSection = $('.text-section');
 const $map = $('#map');
 
-$section2.waypoint(function(direction){
-  if (direction == 'down'){
-    $map.css("background-image", "url('/img/Test-map-2.png')");
-  } else {
-    $map.css("background-image", "url('/img/Test-map-1.png')");
-  }
-}, {offset: '50%'});
+$( document ).ready(function() {
+
+    $textSection.each(function(){
+        var _this = this;
+        var inview = new Waypoint({
+            element: _this,
+            handler: function (direction) {
+                $(this.element).animate({'opacity': 1})
+            },
+            offset: '50%'
+        });
+
+    });
+
+    // $textSection.waypoint(function(direction){
+    //     if (direction == 'down'){
+    //         $textSection.fadeTo(1000, 1);
+    //     } else {
+    //         $textSection.fadeTo(1000, 0.2);
+    //     }
+    // }, {offset: '55%'});
+
+    $section2.waypoint(function(direction){
+        if (direction == 'down'){
+            $map.css("background-image", "url('/img/Test-map-2.png')");
+        } else {
+            $map.css("background-image", "url('/img/Test-map-1.png')");
+        }
+    }, {offset: '50%'});
+
+});

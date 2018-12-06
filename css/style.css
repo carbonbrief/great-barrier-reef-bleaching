@@ -66,4 +66,5 @@ body {
 .text-section {
     margin-top: 5em;
     margin-bottom: 10em;
+    opacity: 0;
 }
