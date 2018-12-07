@@ -66,7 +66,7 @@ body {
 .text-section {
     margin-top: 5em;
     margin-bottom: 10em;
-    opacity: 0.2;
+    opacity: 0;
 }
 
 #chart {
@@ -81,6 +81,7 @@ body {
     stroke: #C7432B;
     stroke-width: 1;
     fill: #C7432B;
+    opacity: 0;
 }
 
 .bar {

@@ -13,6 +13,10 @@ var svg = chart.append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var triangle;
+var triangleBBox;
+var triangleWidth;
+
 d3.csv("./data/years.csv").then(function (data) {
 
     x.domain(data.map(function (d) {
@@ -51,47 +55,48 @@ d3.csv("./data/years.csv").then(function (data) {
 
     var trianglePoints = x(1980) + ' ' + y(1.3) + ', ' + x(1981) + ' ' + y(1.1) + ', ' + x(1982) + ' ' + y(1.3) + ' ' + x(1980) + ', ' + y(1.3);
 
-    var triangle = svg.append('polyline')
+    triangle = svg.append('polyline')
         .attr('points', trianglePoints)
         .attr("id", "triangle")
         // otherwise doesn't align in the middle of the bar
         .attr("transform", "scale(0.5,1)");
 
-    var triangleBBox = d3.select("polyline#triangle").node().getBBox();
+})
 
+function trianglePos1 (){
+
+    triangleBBox = d3.select("polyline#triangle").node().getBBox();
+    triangleWidth = (triangleBBox.width/2) + 4;
     console.log(triangleBBox);
-    console.log(triangleBBox[width]);
-
-    var triangleWidth = (triangleBBox.width/2) + 4;
-
     console.log(triangleWidth);
 
-    setTimeout(function(){
+    triangle.transition()
+    .duration(750)
+    .style("opacity", 1)
+    .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
 
-        triangle.transition()
-        .duration(750)
-        .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
+};
 
-    }, 2000);
+setTimeout(function(){
 
-    setTimeout(function(){
+    trianglePos1();
 
-        triangle.transition()
-        .duration(750)
-        .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
+}, 2000);
 
-    }, 4000);
+// setTimeout(function(){
+
+//     triangle.transition()
+//     .duration(750)
+//     .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+// }, 4000);
 
 
-    setTimeout(function(){
+// setTimeout(function(){
 
-        triangle.transition()
-        .duration(750)
-        .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
+//     triangle.transition()
+//     .duration(750)
+//     .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
 
-    }, 6000);
-
-    
-
-})
+// }, 6000);
 
