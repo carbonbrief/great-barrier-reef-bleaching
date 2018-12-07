@@ -70,8 +70,9 @@ body {
 }
 
 #chart {
-    width: 50%;
-    height: 120px;
+    /* fixed so don't have issues with pointer alignment */
+    width: 400px;
+    height: 100px;
     margin-left: auto;
     margin-right: auto;
 }
