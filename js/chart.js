@@ -1,9 +1,9 @@
 var chart = d3.select("#chart"),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    margin = {top: 20, right: 10, bottom: 30, left: 10},
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
     height = parseInt(chart.style("height"))  - margin.top - margin.bottom;
 
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.15).round([10]),
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.15),
     y = d3.scaleLinear().rangeRound([height, 0]);
     color = d3.scaleOrdinal().domain(["n", "b"]).range(["#f3f3f3", "#C7432B"]);
 
@@ -77,13 +77,25 @@ d3.csv("./data/years.csv").then(function (data) {
     // .attr("d", "M 0 " + (-height/3) + " L " + (-width/3) + " " + (height/3) + "L " + (width/3) + " " + (height/3) + " Z")
     // .style("fill",function(d,i) { return colorScale(i); });
 
-    var trianglePoints = x(1997) + ' ' + y(1.2) + ', ' + x(1998) + ' ' + y(1.1) + ', ' + x(1999) + ' ' + y(1.2) + ' ' + x(1997) + ', ' + y(1.2);
+    var trianglePoints = x(1980) + ' ' + y(1.2) + ', ' + x(1981) + ' ' + y(1.1) + ', ' + x(1982) + ' ' + y(1.2) + ' ' + x(1980) + ', ' + y(1.2);
 
     console.log(trianglePoints);
 
-    svg.append('polyline')
+    var triangle = svg.append('polyline')
         .attr('points', trianglePoints)
         .attr("class", "triangle");
+        // otherwise doesn't align in the middle of the bar
+        //.attr("transform", "scale(0.5,1)");
+
+    setTimeout(function(){
+
+        triangle.transition()
+        .duration(750)
+        .attr("transform", "translate(" + x(1998) + ",0)")
+
+    }, 3000);
+
+    
 
 })
 
