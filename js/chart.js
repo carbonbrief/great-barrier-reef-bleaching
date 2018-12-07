@@ -19,9 +19,7 @@ d3.csv("./data/years.csv").then(function (data) {
         return d.year;
     }));
 
-    y.domain([0, d3.max(data, function (d) {
-        return Number(d.value);
-    })]);
+    y.domain([0, 1.2]);
 
     color.domain(data.map(function (d){ return d.mass_bleaching; }));
 
@@ -51,19 +49,41 @@ d3.csv("./data/years.csv").then(function (data) {
         return color(d.mass_bleaching)
     });
 
-    var triangle1 = [
-        {"year": "1998"},
-        {"value": "1"}
-    ];
+    // var triangle1 = [
+    //     {"year": "1998"},
+    //     {"value": "1"}
+    // ];
 
-    svg.append(triangle);
+    // svg.append(triangle);
 
-    svg.selectAll(".point")
-    .data(triangle1)
-    .enter().append("path")
-    .attr("class", "point")
-    .attr("d", d3.svg.symbol().type("triangle-up"))
-    .attr("transform", function(d) { return "translate(" + x(d.year) + "," + y(Number(d.value)) + ")"; });
+    // svg.selectAll(".point")
+    // .data(triangle1)
+    // .enter().append("path")
+    // .attr("class", "point")
+    // .attr("d", d3.svg.symbol().type("triangle-up"))
+    // .attr("transform", function(d) { return "translate(" + x(d.year) + "," + y(Number(d.value)) + ")"; });
+
+    // svg.append('path')
+    // .attr("d", d3.symbolTriangle)
+    // .attr("transform", function(d) { return "translate(" + 100 + "," + 100 + ")"; })
+    // .style("fill", "red");
+
+    // svg.append("g")
+    // .attr("transform","translate(" + (width/2) + "," + (height/2) + ")")
+    // .selectAll("triangles")
+    // .data(triangle1)
+    // .enter().append("path")
+    // .attr("class", function(d,i) { return "triangles triangle-" + i; })
+    // .attr("d", "M 0 " + (-height/3) + " L " + (-width/3) + " " + (height/3) + "L " + (width/3) + " " + (height/3) + " Z")
+    // .style("fill",function(d,i) { return colorScale(i); });
+
+    var trianglePoints = x(1997) + ' ' + y(1.2) + ', ' + x(1998) + ' ' + y(1.1) + ', ' + x(1999) + ' ' + y(1.2) + ' ' + x(1997) + ', ' + y(1.2);
+
+    console.log(trianglePoints);
+
+    svg.append('polyline')
+        .attr('points', trianglePoints)
+        .attr("class", "triangle");
 
 })
 
