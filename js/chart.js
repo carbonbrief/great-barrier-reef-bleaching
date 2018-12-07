@@ -1,9 +1,9 @@
 var chart = d3.select("#chart"),
-    margin = {top: 20, right: 10, bottom: 30, left: 10},
+    margin = {top: 20, right: 10, bottom: 30, left: 0},
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
     height = parseInt(chart.style("height"))  - margin.top - margin.bottom;
 
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.15),
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
     color = d3.scaleOrdinal().domain(["n", "b"]).range(["#f3f3f3", "#C7432B"]);
 
@@ -79,21 +79,45 @@ d3.csv("./data/years.csv").then(function (data) {
 
     var trianglePoints = x(1980) + ' ' + y(1.2) + ', ' + x(1981) + ' ' + y(1.1) + ', ' + x(1982) + ' ' + y(1.2) + ' ' + x(1980) + ', ' + y(1.2);
 
-    console.log(trianglePoints);
-
     var triangle = svg.append('polyline')
         .attr('points', trianglePoints)
-        .attr("class", "triangle");
+        .attr("id", "triangle")
         // otherwise doesn't align in the middle of the bar
-        //.attr("transform", "scale(0.5,1)");
+        .attr("transform", "scale(0.5,1)");
+
+    var triangleBBox = d3.select("polyline#triangle").node().getBBox();
+
+    console.log(triangleBBox);
+    console.log(triangleBBox[width]);
+
+    var triangleWidth = (triangleBBox.width + 2)/2;
+
+    console.log(triangleWidth);
 
     setTimeout(function(){
 
         triangle.transition()
         .duration(750)
-        .attr("transform", "translate(" + x(1998) + ",0)")
+        .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
 
-    }, 3000);
+    }, 2000);
+
+    setTimeout(function(){
+
+        triangle.transition()
+        .duration(750)
+        .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+    }, 4000);
+
+
+    setTimeout(function(){
+
+        triangle.transition()
+        .duration(750)
+        .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+    }, 6000);
 
     
 

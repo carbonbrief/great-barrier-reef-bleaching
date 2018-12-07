@@ -76,8 +76,13 @@ body {
     margin-right: auto;
 }
 
-.triangle {
+#triangle {
     stroke: #C7432B;
+    stroke-width: 1;
     fill: #C7432B;
-    opacity: 0.7;
+}
+
+.bar {
+    stroke: white;
+    stroke-width: 0.5;
 }
