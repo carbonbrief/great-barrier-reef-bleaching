@@ -22,10 +22,18 @@ $( document ).ready(function() {
 
     });
 
+    $section1.waypoint(function(direction){
+        if (direction == 'down'){
+            trianglePos1();
+        } else {
+            // do nothing
+        }
+    }, {offset: '50%'});
+
     $section2.waypoint(function(direction){
         if (direction == 'down'){
             $map.css("background-image", "url('/img/Test-map-2.png')");
-            trianglePos1();
+            trianglePos2();
         } else {
             $map.css("background-image", "url('/img/Test-map-1.png')");
         }

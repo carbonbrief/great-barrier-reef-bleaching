@@ -70,11 +70,17 @@ body {
 }
 
 #chart {
-    /* fixed so don't have issues with pointer alignment */
+    /* fixed width so don't have issues with pointer alignment */
     width: 400px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#chart-container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;
 }
 
 #triangle {
