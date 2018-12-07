@@ -77,11 +77,30 @@ function trianglePos1 (){
 
 };
 
-setTimeout(function(){
+function trianglePos2 (){
 
-    trianglePos1();
+    triangleBBox = d3.select("polyline#triangle").node().getBBox();
+    triangleWidth = (triangleBBox.width/2) + 4;
+    console.log(triangleBBox);
+    console.log(triangleWidth);
 
-}, 2000);
+    triangle.transition()
+    .duration(750)
+    .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+};
+
+// setTimeout(function(){
+
+//     trianglePos1();
+
+// }, 2000);
+
+// setTimeout(function(){
+
+//     trianglePos2();
+
+// }, 4000);
 
 // setTimeout(function(){
 

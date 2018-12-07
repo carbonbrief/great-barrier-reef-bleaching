@@ -25,6 +25,7 @@ $( document ).ready(function() {
     $section2.waypoint(function(direction){
         if (direction == 'down'){
             $map.css("background-image", "url('/img/Test-map-2.png')");
+            trianglePos1();
         } else {
             $map.css("background-image", "url('/img/Test-map-1.png')");
         }
