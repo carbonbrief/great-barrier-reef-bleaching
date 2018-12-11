@@ -68,7 +68,7 @@ body {
 }
 
 #image-container {
-    height: 2400px;
+    height: 3200px;
 }
 
 #map {
@@ -92,18 +92,31 @@ body {
     height: 20%;
 }
 
-#chart {
+#chart-wrapper {
     /* fixed width so don't have issues with pointer alignment */
     width: 400px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #f3f3f3;
+    -moz-box-shadow:    4px 4px 0px 0px #999999;
+    -webkit-box-shadow: 4px 4px 0px 0px #999999;
+    box-shadow:         4px 4px 0px 0px #999999;
+}
+
+#chart {
+    height: inherit;
+    z-index: 999999;
 }
 
 #chart-container {
     position: sticky;
     position: -webkit-sticky;
     top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #triangle {
