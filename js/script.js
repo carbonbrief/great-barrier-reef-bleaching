@@ -23,20 +23,29 @@ $( document ).ready(function() {
     });
 
     $section1.waypoint(function(direction){
-        if (direction == 'down'){
-            trianglePos1();
-        } else {
-            // do nothing
-        }
-    }, {offset: '50%'});
+        $map.css("background-image", "url('/img/Test-map-1.png')");
+        trianglePos1();
 
-    $section2.waypoint(function(direction){
         if (direction == 'down'){
+            // placeholder for when want to use
+        } else {
+            //
+        }
+
+    }, {offset: '40%'});
+
+    $section2.waypoint(function(){
+
             $map.css("background-image", "url('/img/Test-map-2.png')");
             trianglePos2();
-        } else {
+
+    }, {offset: '40%'});
+
+    $section3.waypoint(function(direction){
+
             $map.css("background-image", "url('/img/Test-map-1.png')");
-        }
-    }, {offset: '50%'});
+            trianglePos3();
+            
+    }, {offset: '40%'});
 
 });
