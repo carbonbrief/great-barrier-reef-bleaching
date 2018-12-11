@@ -44,7 +44,7 @@ body {
 }
 
 .wrapper {
-    width: 1200px;
+    width: 1400px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -53,23 +53,35 @@ body {
     display: flex;
 }
 
+.large {
+    -webkit-flex: 2 0 0;
+    flex: 2 0 0;
+}
+
+.small {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+}
+
 .column {
-    flex: 50%;
+    
+}
+
+#image-container {
+    height: 2400px;
 }
 
 #map {
-    height: calc(100% - 40px);
-    /* height: 400px; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    height: 800px;
+    margin: auto;
     background-image: url("/img/Test-map-1.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     position: sticky;
     position: -webkit-sticky;
-    top: calc((100% - 440px)/2);
+    top: calc((100% - 800px)/2);
 }
 
 .text-section {
