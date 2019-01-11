@@ -1,27 +1,18 @@
 @media all and (max-width: 1690px) { 
-    .wrapper {
-        width: 1200px;
-    }
+
 }
 @media all and (max-width: 1280px) { 
 
-    .wrapper {
-        width: 950px;
-    }
+
 
 }
 @media all and (max-width: 980px) {
 
-    .wrapper {
-        width: 700px;
-    }
+
 
 }
 @media all and (max-width: 736px) { 
 
-    .wrapper {
-        width: 100%;
-    }
 
     p {
         font-weight: 300;

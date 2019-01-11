@@ -5,7 +5,7 @@ var chart = d3.select("#chart"),
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
-    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#f3f3f3", "#C7432B"]);
+    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#F3F3F3", "#FF6F61"]);
 
 var svg = chart.append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -28,6 +28,7 @@ d3.csv("./data/years.csv").then(function (data) {
     color.domain(data.map(function (d){ return d.mass_bleaching; }));
 
     svg.append("g")
+    .attr("class", "axis")
     .attr("transform", "translate(0," + (height + 10) + ")")
     .call(d3.axisBottom(x)
         .tickValues([1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015])
