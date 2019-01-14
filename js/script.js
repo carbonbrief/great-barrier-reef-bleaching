@@ -12,6 +12,9 @@ $('.padding-section-top').css("height", screenHeight*0.5);
 let textHeight = $('#text-container').height();
 $("#map-container").css("height", textHeight);
 
+let placeholderHeight = $('#chart-placeholder').height();
+$("#chart-container").css("height", (textHeight + placeholderHeight));
+
 // calc where chart container should go here too
 
 $( document ).ready(function() {

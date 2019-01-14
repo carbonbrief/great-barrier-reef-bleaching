@@ -52,7 +52,10 @@ d3.csv("./data/years.csv").then(function (data) {
     .attr("ry", 3)
     .attr("fill", function (d) {
         return color(d.mass_bleaching)
-    });
+    })
+    .on("mouseover", mouseover)
+    .on("mouseout", mouseout)
+    .on("click", mouseclick);
 
     var trianglePoints = x(1980) + ' ' + y(1.3) + ', ' + x(1981) + ' ' + y(1.1) + ', ' + x(1982) + ' ' + y(1.3) + ' ' + x(1980) + ', ' + y(1.3);
 
@@ -63,6 +66,43 @@ d3.csv("./data/years.csv").then(function (data) {
         .attr("transform", "scale(0.5,1)");
 
 })
+
+function mouseover (d) {
+
+    console.log(d.mass_bleaching);
+
+    // change styling on mouseover
+    d3.select(this)
+    .attr("opacity", function(d) {
+        if (d.mass_bleaching == "b") {
+            return 0.5;
+        } 
+        else {
+            return 1;
+        }
+    });
+
+}
+
+function mouseout () {
+
+    // resume normal styling on mouseout
+    d3.select(this).transition()
+    .duration(300)
+    .ease(d3.easeLinear)
+    .attr("opacity", 1);
+
+}
+
+// function mouseclick (d) {
+//     let year = d.year;
+
+//     if (year == 1998 || year == 2002 || year == 2016 || year == 2017) {
+//         console.log(year);
+//     } else {
+//         // do nothing
+//     }
+// }
 
 function triangleSection1 (){
 
@@ -100,6 +140,8 @@ function triangleSection3 (){
 
 function triangleSection4 (){
 
+    // same year so maintain position
+
     triangleSection3();
 
 };
@@ -114,33 +156,4 @@ function triangleSection5 (){
     .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
 
 };
-
-// setTimeout(function(){
-
-//     trianglePos1();
-
-// }, 2000);
-
-// setTimeout(function(){
-
-//     trianglePos2();
-
-// }, 4000);
-
-// setTimeout(function(){
-
-//     triangle.transition()
-//     .duration(750)
-//     .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
-
-// }, 4000);
-
-
-// setTimeout(function(){
-
-//     triangle.transition()
-//     .duration(750)
-//     .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
-
-// }, 6000);
 

@@ -149,13 +149,13 @@ body {
 }
 
 #chart-placeholder {
-    height: 140px;
+    height: 200px;
 }
 
 #chart-container {
     position: absolute;
     /*  adjust dynamicaly via code depending on the height of the containers above */
-    top: 360px;
+    top: 500px;
     height: 3320px;
     width: 830px;
     margin-left: calc((100% - 830px)/2);
