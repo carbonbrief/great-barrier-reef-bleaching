@@ -98,6 +98,23 @@ function triangleSection3 (){
 
 };
 
+function triangleSection4 (){
+
+    triangleSection3();
+
+};
+
+function triangleSection5 (){
+
+    triangleBBox = d3.select("polyline#triangle").node().getBBox();
+    triangleWidth = (triangleBBox.width/2) + 4;
+
+    triangle.transition()
+    .duration(750)
+    .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+};
+
 // setTimeout(function(){
 
 //     trianglePos1();

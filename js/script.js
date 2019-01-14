@@ -1,17 +1,16 @@
-const $section1 = $('#section-1');
-const $section2 = $('#section-2');
-const $section3 = $('#section-3');
-const $section4 = $('#section-4');
 const $textSection = $('.text-section');
 const $paddingSection = $('.padding-section');
 const $map = $('#map');
 
+// SET ELEMENT HEIGHTS
+
 let screenHeight = $(window).height();
-
-// set map height to screenHeight
-
 $map.css("height", screenHeight);
 $paddingSection.css("height", screenHeight*0.65);
+$('.padding-section-top').css("height", screenHeight*0.5);
+
+let textHeight = $('#text-container').height();
+$("#map-container").css("height", textHeight);
 
 // calc where chart container should go here too
 

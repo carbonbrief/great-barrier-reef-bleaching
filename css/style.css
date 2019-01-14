@@ -35,8 +35,20 @@ p {
 }
 
 a {
-    color: #2f8fce;
-    text-decoration: none;
+    color: #333333;
+    text-decoration: underline;
+    text-decoration-color: #FF6F61;
+    /* second option */
+    /* text-decoration: none;
+    border-bottom: 1px solid #FF6F61; */
+}
+
+a:hover {
+    color: #FF6F61;
+}
+
+a:visited {
+    color: #333333;
 }
 
 body {
@@ -44,7 +56,7 @@ body {
 }
 
 .central {
-    width: 830px;
+    width: 800px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -94,7 +106,26 @@ body {
     margin-bottom: 1em;
 }
 
+.text-section p {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.year-highlight {
+    margin: 10px;
+    padding: 5px;
+    color: #FF6F61;
+    border: 2px solid #FF6F61;
+    -moz-box-shadow:    4px 4px 0px 0px #FF6F61;
+    -webkit-box-shadow: 4px 4px 0px 0px #FF6F61;
+    box-shadow:         4px 4px 0px 0px #FF6F61;
+}
+
 .padding-section {
+    height: 200px;
+}
+
+.padding-section-top {
     height: 200px;
 }
 
