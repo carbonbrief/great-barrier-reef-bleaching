@@ -41,19 +41,22 @@ var locations = {
         bearing: 0,
         center: [147.60, -18.24],
         zoom: 3.2,
-        pitch: 0
+        pitch: 0,
+        speed: 0.5
     },
     'section-2': {
         bearing: 0,
         center: [147.60, -18.24],
         zoom: 4,
-        pitch: 0
+        pitch: 0,
+        speed: 0.5
     },
     'section-3': {
         bearing: 0,
         center: [140, -18],
         zoom: 4,
-        pitch: 0
+        pitch: 0,
+        speed: 0.5
     },
 
 }

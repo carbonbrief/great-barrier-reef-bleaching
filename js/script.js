@@ -16,7 +16,9 @@ $map.css("height", screenHeight);
 $( document ).ready(function() {
 
     $textSection.each(function(){
+
         var _this = this;
+
         var inview = new Waypoint({
             element: _this,
             handler: function (direction) {
