@@ -36,11 +36,11 @@ p {
 
 a {
     color: #333333;
-    text-decoration: underline;
-    text-decoration-color: #FF6F61;
+    /* text-decoration: underline;
+    text-decoration-color: #FF6F61; */
     /* second option */
-    /* text-decoration: none;
-    border-bottom: 1px solid #FF6F61; */
+    text-decoration: none;
+    border-bottom: 1.2px solid #FF6F61;
 }
 
 a:hover {
@@ -192,4 +192,39 @@ body {
 .bar {
     stroke: #FFFFFF;
     stroke-width: 0.5;
+}
+
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9000;
+    height: 45px;
+    width: 150px;
+    background-image:url(../img/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+.share-icons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9000;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.share-icons .fa-stack {
+    opacity: 0.4;
+}
+
+.share-icons .fa-stack:hover {
+    opacity: 1;
 }
