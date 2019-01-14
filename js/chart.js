@@ -69,8 +69,6 @@ d3.csv("./data/years.csv").then(function (data) {
 
 function mouseover (d) {
 
-    console.log(d.mass_bleaching);
-
     // change styling on mouseover
     d3.select(this)
     .attr("opacity", function(d) {
@@ -94,17 +92,22 @@ function mouseout () {
 
 }
 
-// function mouseclick (d) {
-//     let year = d.year;
+function mouseclick (d) {
+    let year = d.year;
 
-//     if (year == 1998 || year == 2002 || year == 2016 || year == 2017) {
-//         console.log(year);
-//     } else {
-//         // do nothing
-//     }
-// }
+    if (year == 1998 || year == 2002 || year == 2016 || year == 2017) {
+        console.log(year);
 
-function triangleSection1 (){
+        $('html, body').animate({
+            scrollTop: $("#" + year).offset().top - (screenHeight/2)
+        }, 1000);
+
+    } else {
+        // do nothing
+    }
+}
+
+function triangle1998 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -116,7 +119,7 @@ function triangleSection1 (){
 
 };
 
-function triangleSection2 (){
+function triangle2002 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -127,7 +130,7 @@ function triangleSection2 (){
 
 };
 
-function triangleSection3 (){
+function triangle2016 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -138,15 +141,12 @@ function triangleSection3 (){
 
 };
 
-function triangleSection4 (){
-
+function triangle2016second (){
     // same year so maintain position
-
-    triangleSection3();
-
+    triangle2016();
 };
 
-function triangleSection5 (){
+function triangle2017 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;

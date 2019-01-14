@@ -37,35 +37,35 @@ map.on('load', function () {
 // create list of locations to fly to
 
 var locations = {
-    'Section1': {
+    '1998': {
         bearing: 0,
         center: [147.60, -18.24],
         zoom: 3.2,
         pitch: 0,
         speed: 0.5
     },
-    'Section2': {
+    '2002': {
         bearing: 0,
         center: [147.60, -18.24],
         zoom: 4,
         pitch: 0,
         speed: 0.5
     },
-    'Section3': {
+    '2016': {
         bearing: 0,
         center: [140, -18],
         zoom: 4,
         pitch: 0,
         speed: 0.5
     },
-    'Section4': {
+    '2016-2': {
         bearing: 0,
         center: [140, -17.8],
         zoom: 4.5,
         pitch: 0.2,
         speed: 0.5
     },
-    'Section5': {
+    '2017': {
         bearing: 0,
         center: [140, -18],
         zoom: 4,
