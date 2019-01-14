@@ -1,7 +1,7 @@
 var chart = d3.select("#chart"),
-    margin = {top: 20, right: 10, bottom: 30, left: 0},
+    margin = {top: 30, right: 10, bottom: 30, left: 0},
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
-    height = parseInt(chart.style("height"))  - margin.top - margin.bottom;
+    height = parseInt(chart.style("height"))  - margin.top - margin.bottom - 20;
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
@@ -12,6 +12,10 @@ var svg = chart.append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var div = d3.select("#chart").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 1);
 
 var triangle;
 var triangleBBox;
@@ -65,6 +69,8 @@ d3.csv("./data/years.csv").then(function (data) {
         // otherwise doesn't align in the middle of the bar
         .attr("transform", "scale(0.5,1)");
 
+    div.html( "<p><span class='tooltip-highlight'>1998</span></p>");
+
 })
 
 function mouseover (d) {
@@ -116,6 +122,23 @@ function triangle1998 (){
     .duration(750)
     .style("opacity", 1)
     .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+    // change pos of tooltip
+
+    div.transition()
+        .duration(750)
+        .style("opacity", 1)
+        .attr("transform", "translate(" + (x(1997)) + ",0)");
+        // .style("left", function(d) {
+        //     x(1997)
+        // })
+        // .style("top", 20);
+
+    // div.html( "<p><span class='year-highlight'>1998</span></p>")
+    //     .style("left", function(d) {
+    //         x(1997)
+    //     })
+    //     .style("top", 20);
 
 };
 

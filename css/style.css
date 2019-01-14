@@ -20,6 +20,15 @@ h2 {
     margin-block-end: 1.33em;
 }
 
+h3 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    color: #333333;
+    font-size: 16px;
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+}
+
 p {
     font-family: "PT Serif", serif;
     font-size: 20px;
@@ -132,7 +141,7 @@ body {
 #chart-wrapper {
     /* fixed width so don't have issues with pointer alignment */
     width: 400px;
-    height: 100px;
+    height: 120px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -146,6 +155,7 @@ body {
 #chart {
     height: inherit;
     z-index: 999999;
+    position: relative;
 }
 
 #chart-placeholder {
@@ -169,6 +179,13 @@ body {
     margin-bottom: 5px;
 }
 
+.key-highlight {
+    background-color: #ff6e61;
+    padding: 2px;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
 .axis text {
     color: #333333;
     font-family: "PT Sans", Arial, sans-serif;
@@ -187,6 +204,32 @@ body {
     stroke-width: 1;
     fill: #FF6F61;
     opacity: 0;
+}
+
+.tooltip {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 30px;
+    left: 0;
+}
+
+.tooltip-highlight {
+    padding: 2px;
+    color: #FF6F61;
+    border: 1px solid #FF6F61;
+    -moz-box-shadow:    2px 2px 0px 0px #FF6F61;
+    -webkit-box-shadow: 2px 2px 0px 0px #FF6F61;
+    box-shadow:         2px 2px 0px 0px #FF6F61;
+}
+
+.tooltip p {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 13px;
 }
 
 .bar {
