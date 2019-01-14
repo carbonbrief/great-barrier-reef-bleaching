@@ -64,7 +64,7 @@ d3.csv("./data/years.csv").then(function (data) {
 
 })
 
-function trianglePos1 (){
+function triangleSection1 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -76,7 +76,7 @@ function trianglePos1 (){
 
 };
 
-function trianglePos2 (){
+function triangleSection2 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -87,7 +87,7 @@ function trianglePos2 (){
 
 };
 
-function trianglePos3 (){
+function triangleSection3 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
