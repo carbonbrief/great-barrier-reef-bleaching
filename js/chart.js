@@ -1,11 +1,11 @@
 var chart = d3.select("#chart"),
-    margin = {top: 30, right: 10, bottom: 30, left: 0},
+    margin = {top: 25, right: 10, bottom: 30, left: 0},
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
     height = parseInt(chart.style("height"))  - margin.top - margin.bottom - 20;
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
-    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#F3F3F3", "#FF6F61"]);
+    color = d3.scaleOrdinal().domain(["n", "b", "sb"]).range(["#FFDBD7", "#F3F3F3", "#FF6F61"]);
 
 var svg = chart.append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -90,7 +90,7 @@ d3.csv("./data/years.csv").then(function (data) {
         .attr("transform", "translate(2.5,4.1)");
 
     tooltip.attr("opacity", 0)
-        .attr("transform", "translate(" + (x(1980) - tooltipWidth/2) + "," + y(2) + ")");
+        .attr("transform", "translate(" + (x(1980) - tooltipWidth/2) + "," + y(1.9) + ")");
 
 })
 
@@ -138,15 +138,15 @@ function triangle1998 (){
     triangleWidth = (triangleBBox.width/2) + 4;
 
     triangle.transition()
-    .duration(750)
+    .duration(500)
     .style("opacity", 1)
     .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
 
 
     tooltip.transition()
-        .duration(750)
+        .duration(500)
         .style("opacity", 1)
-        .attr("transform", "translate(" + (x(1998) - tooltipWidth/2.5) + "," + y(2) + ")")
+        .attr("transform", "translate(" + (x(1998) - tooltipWidth/2.5) + "," + y(1.9) + ")")
         .on("end", function() {
             d3.select("#tooltip-text").text(1998);
         });
@@ -159,13 +159,13 @@ function triangle2002 (){
     triangleWidth = (triangleBBox.width/2) + 4;
 
     triangle.transition()
-    .duration(750)
+    .duration(500)
     .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
 
     tooltip.transition()
-    .duration(750)
+    .duration(500)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2002) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .attr("transform", "translate(" + (x(2002) - tooltipWidth/2.5) + "," + y(1.9) + ")")
     .on("end", function() {
         d3.select("#tooltip-text").text(2002);
     });
@@ -178,13 +178,13 @@ function triangle2016 (){
     triangleWidth = (triangleBBox.width/2) + 4;
 
     triangle.transition()
-    .duration(750)
+    .duration(500)
     .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
 
     tooltip.transition()
-    .duration(750)
+    .duration(500)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2016) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .attr("transform", "translate(" + (x(2016) - tooltipWidth/2.5) + "," + y(1.9) + ")")
     .on("end", function() {
         d3.select("#tooltip-text").text(2016);
     });
@@ -202,14 +202,14 @@ function triangle2017 (){
     triangleWidth = (triangleBBox.width/2) + 4;
 
     triangle.transition()
-    .duration(750)
+    .duration(500)
     .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
 
 
     tooltip.transition()
-    .duration(750)
+    .duration(500)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2017) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .attr("transform", "translate(" + (x(2017) - tooltipWidth/2.5) + "," + y(1.9) + ")")
     .on("end", function() {
         d3.select("#tooltip-text").text(2017);
     });

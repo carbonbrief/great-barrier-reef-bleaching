@@ -24,9 +24,9 @@ h3 {
     font-family: "PT Sans", sans-serif;
     font-weight: 400;
     color: #333333;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 0em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.5em;
 }
 
 p {
@@ -179,11 +179,18 @@ body {
     margin-bottom: 5px;
 }
 
-.key-highlight {
-    background-color: #ff6e61;
+.key {
     padding: 2px;
     border-radius: 4px;
+}
+
+.b {
+    background-color: #ff6e61;
     color: #FFFFFF;
+}
+
+.sb {
+    background-color: #FFDBD7;
 }
 
 .axis text {

@@ -19,6 +19,9 @@ $("#chart-container").css("height", (textHeight + placeholderHeight));
 
 $( document ).ready(function() {
 
+    // scroll to top on window reload
+    $(document).scrollTop(0);
+
     $textSection.each(function(){
 
         let _this = this;
