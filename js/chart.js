@@ -13,13 +13,13 @@ var svg = chart.append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var div = d3.select("#chart").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 1);
-
+var tooltip;
 var triangle;
 var triangleBBox;
 var triangleWidth;
+
+let tooltipHeight = 20;
+let tooltipWidth = 34;
 
 d3.csv("./data/years.csv").then(function (data) {
 
@@ -69,7 +69,28 @@ d3.csv("./data/years.csv").then(function (data) {
         // otherwise doesn't align in the middle of the bar
         .attr("transform", "scale(0.5,1)");
 
-    div.html( "<p><span class='tooltip-highlight'>1998</span></p>");
+    tooltip = svg.append('g')
+        .attr("id", "tooltip");
+
+    tooltip.append("rect")
+        .attr("id", "rect-1")
+        .attr("width", tooltipWidth)
+        .attr("height", tooltipHeight)
+        .attr("transform", "translate(2,2)");
+
+    tooltip.append("rect")
+        .attr("id", "rect-2")
+        .attr("width", tooltipWidth)
+        .attr("height", tooltipHeight);
+
+    tooltip.append("text")
+        .attr("id", "tooltip-text")
+        .attr("y", tooltipHeight/2)
+        .text("1998")
+        .attr("transform", "translate(2.5,4.1)");
+
+    tooltip.attr("opacity", 0)
+        .attr("transform", "translate(" + (x(1980) - tooltipWidth/2) + "," + y(2) + ")");
 
 })
 
@@ -108,8 +129,6 @@ function mouseclick (d) {
             scrollTop: $("#" + year).offset().top - (screenHeight/2)
         }, 1000);
 
-    } else {
-        // do nothing
     }
 }
 
@@ -123,22 +142,10 @@ function triangle1998 (){
     .style("opacity", 1)
     .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
 
-    // change pos of tooltip
-
-    div.transition()
+    tooltip.transition()
         .duration(750)
         .style("opacity", 1)
-        .attr("transform", "translate(" + (x(1997)) + ",0)");
-        // .style("left", function(d) {
-        //     x(1997)
-        // })
-        // .style("top", 20);
-
-    // div.html( "<p><span class='year-highlight'>1998</span></p>")
-    //     .style("left", function(d) {
-    //         x(1997)
-    //     })
-    //     .style("top", 20);
+        .attr("transform", "translate(" + (x(1998) - tooltipWidth/2.5) + "," + y(2) + ")");
 
 };
 
@@ -151,6 +158,11 @@ function triangle2002 (){
     .duration(750)
     .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
 
+    tooltip.transition()
+    .duration(750)
+    .style("opacity", 1)
+    .attr("transform", "translate(" + (x(2002) - tooltipWidth/2.5) + "," + y(2) + ")");
+
 };
 
 function triangle2016 (){
@@ -161,6 +173,11 @@ function triangle2016 (){
     triangle.transition()
     .duration(750)
     .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+    tooltip.transition()
+    .duration(750)
+    .style("opacity", 1)
+    .attr("transform", "translate(" + (x(2016) - tooltipWidth/2.5) + "," + y(2) + ")");
 
 };
 
@@ -177,6 +194,11 @@ function triangle2017 (){
     triangle.transition()
     .duration(750)
     .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+    tooltip.transition()
+    .duration(750)
+    .style("opacity", 1)
+    .attr("transform", "translate(" + (x(2017) - tooltipWidth/2.5) + "," + y(2) + ")");
 
 };
 
