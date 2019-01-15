@@ -132,6 +132,27 @@ function mouseclick (d) {
     }
 }
 
+function triangleIntro (){
+
+    triangleBBox = d3.select("polyline#triangle").node().getBBox();
+    triangleWidth = (triangleBBox.width/2) + 4;
+
+    triangle.transition()
+    .duration(500)
+    .style("opacity", 0)
+    .attr("transform", "translate(" + (x(1980) + triangleWidth/2) + ",0)scale(0.5,1)");
+
+
+    tooltip.transition()
+        .duration(500)
+        .style("opacity", 0)
+        .attr("transform", "translate(" + (x(1981) - tooltipWidth/2.5) + "," + y(1.9) + ")")
+        .on("end", function() {
+            d3.select("#tooltip-text").text(1998);
+        });
+
+};
+
 function triangle1998 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();

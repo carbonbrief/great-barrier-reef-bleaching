@@ -36,6 +36,7 @@ $( document ).ready(function() {
                     $(this.element).animate({'opacity': 1});
                     window[functionName]();
                     map.flyTo(locations[sectionName]);
+                    console.log(sectionName);
                 } else {
                     $(this.element).animate({'opacity': 0.2});
                 }
@@ -52,6 +53,7 @@ $( document ).ready(function() {
                     $(this.element).animate({'opacity': 1});
                     window[functionName]();
                     map.flyTo(locations[sectionName]);
+                    console.log(sectionName);
                 }
             },
             offset: '15%'
