@@ -73,35 +73,35 @@ var locations = {
     '1998': {
         bearing: 0,
         center: [147.60, -18.24],
-        zoom: 4.2,
+        zoom: 4.6,
         pitch: 0,
         speed: 0.5
     },
     '2002': {
         bearing: 0,
         center: [147.60, -18.24],
-        zoom: 4.2,
+        zoom: 4.6,
         pitch: 0,
         speed: 0.5
     },
     '2016': {
         bearing: 0,
         center: [147.60, -18.24],
-        zoom: 4.2,
+        zoom: 4.6,
         pitch: 0,
         speed: 0.5
     },
     '2016second': {
         bearing: 0,
-        center: [140, -17.8],
-        zoom: 5,
+        center: [143, -17.7],
+        zoom: 5.2,
         pitch: 0.2,
         speed: 0.5
     },
     '2017': {
         bearing: 0,
         center: [147.60, -18.24],
-        zoom: 4.2,
+        zoom: 4.6,
         pitch: 0,
         speed: 0.5
     },
