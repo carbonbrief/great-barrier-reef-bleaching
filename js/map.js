@@ -13,14 +13,17 @@ map.scrollZoom.disable();
 
 map.on('load', function () {
 
-    map.addLayer({
+    map.addSource("world-heritage", {
+        "type": 'geojson',
+        "buffer": 10,
+        "tolerance": 0.5, // default is 0.375
+        data: './data/GBR-world-heritage.json'
+    });
 
+    map.addLayer({
         id: 'world-heritage-simple',
         type: 'line',
-        source: {
-            type: 'geojson',
-            data: './data/GBR-world-heritage.json'
-        },
+        source: "world-heritage",
         layout: {
             "line-join": "round",
             "line-cap": "round"
@@ -29,7 +32,6 @@ map.on('load', function () {
             "line-color": "#FF6F61",
             "line-width": 2
         }
-
     });
 
 });
