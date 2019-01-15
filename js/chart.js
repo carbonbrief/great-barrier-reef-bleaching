@@ -142,10 +142,14 @@ function triangle1998 (){
     .style("opacity", 1)
     .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
 
+
     tooltip.transition()
         .duration(750)
         .style("opacity", 1)
-        .attr("transform", "translate(" + (x(1998) - tooltipWidth/2.5) + "," + y(2) + ")");
+        .attr("transform", "translate(" + (x(1998) - tooltipWidth/2.5) + "," + y(2) + ")")
+        .on("end", function() {
+            d3.select("#tooltip-text").text(1998);
+        });
 
 };
 
@@ -161,7 +165,10 @@ function triangle2002 (){
     tooltip.transition()
     .duration(750)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2002) - tooltipWidth/2.5) + "," + y(2) + ")");
+    .attr("transform", "translate(" + (x(2002) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .on("end", function() {
+        d3.select("#tooltip-text").text(2002);
+    });
 
 };
 
@@ -177,7 +184,10 @@ function triangle2016 (){
     tooltip.transition()
     .duration(750)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2016) - tooltipWidth/2.5) + "," + y(2) + ")");
+    .attr("transform", "translate(" + (x(2016) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .on("end", function() {
+        d3.select("#tooltip-text").text(2016);
+    });
 
 };
 
@@ -195,10 +205,14 @@ function triangle2017 (){
     .duration(750)
     .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
 
+
     tooltip.transition()
     .duration(750)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(2017) - tooltipWidth/2.5) + "," + y(2) + ")");
+    .attr("transform", "translate(" + (x(2017) - tooltipWidth/2.5) + "," + y(2) + ")")
+    .on("end", function() {
+        d3.select("#tooltip-text").text(2017);
+    });
 
 };
 
