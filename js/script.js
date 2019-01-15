@@ -15,7 +15,8 @@ $("#map-container").css("height", textHeight);
 let placeholderHeight = $('#chart-placeholder').height();
 $("#chart-container").css("height", (textHeight + placeholderHeight));
 
-// calc where chart container should go here too
+let chartFromTop = $('#section-1').height() + $('#section-2').height();
+$("#chart-container").css("top", (chartFromTop + 10));
 
 $( document ).ready(function() {
 
