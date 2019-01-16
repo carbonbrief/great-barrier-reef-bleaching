@@ -30,7 +30,8 @@ map.on('load', function () {
         },
         paint: {
             "line-color": "#333333",
-            "line-width": 1
+            "line-width": 1,
+            "line-opacity": 0
         }
     });
 
@@ -85,14 +86,23 @@ map.on('load', function () {
     // create popup but don't add to map yet
 
     popup = new mapboxgl.Popup({closeButton: false})
-    .setLngLat([145, -19])
-    .setHTML('<h3>World Heritage Area</h3>')
+    .setLngLat([143.8, -10.5])
+    .setHTML('<h3>Great Barrier Reef World Heritage Area</h3>')
 
 });
 
 // scroll actions
 
-function mapIntro () {
+function mapIntro1 () {
+
+    popup.remove();
+
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');    
+
+}
+
+function mapIntro2 () {
 
     popup.addTo(map);
 
@@ -117,18 +127,21 @@ function map2002 () {
 }
 
 function map2016 () {
+    popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
     map.getSource('bleaching').setData('./data/2016.geojson');
 }
 
 function map2016second () {
+    popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
     map.getSource('bleaching').setData('./data/2016.geojson');
 }
 
 function map2017 () {
+    popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
     map.getSource('bleaching').setData('./data/2017.geojson');
@@ -137,7 +150,14 @@ function map2017 () {
 // create list of locations to fly to
 
 var locations = {
-    'Intro': {
+    'Intro1': {
+        bearing: 0,
+        center: [145, -19],
+        zoom: 3.3,
+        pitch: 0,
+        speed: 0.5
+    },
+    'Intro2': {
         bearing: 0,
         center: [145, -19],
         zoom: 3.3,
@@ -167,8 +187,8 @@ var locations = {
     },
     '2016second': {
         bearing: 0,
-        center: [143, -17.7],
-        zoom: 5.2,
+        center: [144, -14],
+        zoom: 5.3,
         pitch: 0.2,
         speed: 0.5
     },

@@ -132,7 +132,7 @@ function mouseclick (d) {
     }
 }
 
-function triangleIntro (){
+function triangleIntro1 (){
 
     triangleBBox = d3.select("polyline#triangle").node().getBBox();
     triangleWidth = (triangleBBox.width/2) + 4;
@@ -150,6 +150,12 @@ function triangleIntro (){
         .on("end", function() {
             d3.select("#tooltip-text").text(1998);
         });
+
+};
+
+function triangleIntro2 (){
+
+    triangleIntro1();
 
 };
 

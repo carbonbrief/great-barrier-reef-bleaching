@@ -271,3 +271,11 @@ body {
 .share-icons .fa-stack:hover {
     opacity: 1;
 }
+
+.mapboxgl-popup {
+    max-width: 150px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+}
