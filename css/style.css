@@ -147,6 +147,9 @@ body {
     height: 120px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.box {
     padding: 10px;
     background-color: #ffffff;
     border: 2px solid #cecece;
@@ -182,7 +185,7 @@ body {
     margin-bottom: 5px;
 }
 
-.key {
+.text-key {
     padding: 2px;
     border-radius: 4px;
 }
@@ -278,4 +281,30 @@ body {
 
 .mapboxgl-popup-content {
     text-align: center;
+}
+
+#map-key {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99999;
+}
+
+.colour-key {
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#list-group {
+    padding: 0px;
+    margin: 0px;
 }

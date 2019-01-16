@@ -13,6 +13,23 @@ map.scrollZoom.disable();
 
 map.on('load', function () {
 
+    map.addLayer({
+        'id': 'satellite',
+        'type': 'raster',
+        'source': {
+            'type': 'raster',
+            'tiles': [
+                'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+            ],
+            'tileSize': 256,
+            'attribution': 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.'
+        },
+        'paint': {}
+    });
+
+    // add the satellite layer but hide it for now
+    map.setLayoutProperty('satellite', 'visibility', 'none');
+
     map.addSource("world-heritage", {
         "type": 'geojson',
         "buffer": 10,
@@ -43,7 +60,7 @@ map.on('load', function () {
     });
     
     map.addLayer({
-        'id': 'features',
+        'id': 'gbr-features',
         'type': 'fill',
         "source": "gbr-features",
         'layout': {},
@@ -91,6 +108,11 @@ map.on('load', function () {
 
 });
 
+// map.on('style.load', function () {
+//     // Triggered when `setStyle` is called - on load and when change
+//     addDataLayers();
+// });
+
 // scroll actions
 
 function mapIntro1 () {
@@ -98,7 +120,8 @@ function mapIntro1 () {
     popup.remove();
 
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');    
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'none'); 
+    map.setLayoutProperty('satellite', 'visibility', 'none');   
 
 }
 
@@ -107,7 +130,8 @@ function mapIntro2 () {
     popup.addTo(map);
 
     map.setPaintProperty('world-heritage-site', 'line-opacity', 1);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');    
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
+    map.setLayoutProperty('satellite', 'visibility', 'none');    
 
 }
 
@@ -117,12 +141,14 @@ function map1998 () {
 
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.setLayoutProperty('satellite', 'visibility', 'none');
     map.getSource('bleaching').setData('./data/1998.geojson');
 }
 
 function map2002 () {
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.setLayoutProperty('satellite', 'visibility', 'none');
     map.getSource('bleaching').setData('./data/2002.geojson');
 }
 
@@ -130,13 +156,16 @@ function map2016 () {
     popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.setLayoutProperty('satellite', 'visibility', 'none');
     map.getSource('bleaching').setData('./data/2016.geojson');
 }
 
 function map2016second () {
     popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('gbr-features', 'visibility', 'none');
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.setLayoutProperty('satellite', 'visibility', 'visible');
     map.getSource('bleaching').setData('./data/2016.geojson');
 }
 
@@ -144,6 +173,7 @@ function map2017 () {
     popup.remove();
     map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
     map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.setLayoutProperty('satellite', 'visibility', 'none');
     map.getSource('bleaching').setData('./data/2017.geojson');
 }
 
@@ -188,7 +218,7 @@ var locations = {
     '2016second': {
         bearing: 0,
         center: [144, -14],
-        zoom: 5.3,
+        zoom: 8,
         pitch: 0.2,
         speed: 0.5
     },
