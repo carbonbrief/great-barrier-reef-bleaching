@@ -27,16 +27,17 @@ $( document ).ready(function() {
 
         let _this = this;
         let sectionName = $(this).attr('id');
-        let functionName = "triangle" + sectionName;
+        let graphFunction = "triangle" + sectionName;
+        let mapFunction = "map" + sectionName;
 
         var inViewBottom = new Waypoint({
             element: _this,
             handler: function (direction) {
                 if (direction == 'down'){
                     $(this.element).animate({'opacity': 1});
-                    window[functionName]();
+                    window[graphFunction]();
+                    window[mapFunction]();
                     map.flyTo(locations[sectionName]);
-                    console.log(sectionName);
                 } else {
                     $(this.element).animate({'opacity': 0.2});
                 }
@@ -51,9 +52,9 @@ $( document ).ready(function() {
                     $(this.element).animate({'opacity': 0.2});
                 } else {
                     $(this.element).animate({'opacity': 1});
-                    window[functionName]();
+                    window[graphFunction]();
+                    window[mapFunction]();
                     map.flyTo(locations[sectionName]);
-                    console.log(sectionName);
                 }
             },
             offset: '15%'

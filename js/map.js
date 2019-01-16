@@ -4,8 +4,8 @@ if (!mapboxgl.supported()) {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-        center: [147.60, -18.24],
-        zoom: 3.2
+        center: [145, -19],
+        zoom: 3.3
     });
 }
 
@@ -21,7 +21,7 @@ map.on('load', function () {
     });
 
     map.addLayer({
-        id: 'world-heritage-simple',
+        id: 'world-heritage-site',
         type: 'line',
         source: "world-heritage",
         layout: {
@@ -29,18 +29,39 @@ map.on('load', function () {
             "line-cap": "round"
         },
         paint: {
-            "line-color": "#FF6F61",
-            "line-width": 2
+            "line-color": "#333333",
+            "line-width": 1
         }
     });
 
+    map.addSource("gbr-features", {
+        "type": 'geojson',
+        "buffer": 10,
+        "tolerance": 0.5,
+        data: './data/GBR-features.json'
+    });
+    
     map.addLayer({
-        'id': '1998',
+        'id': 'features',
+        'type': 'fill',
+        "source": "gbr-features",
+        'layout': {},
+        'paint': {
+            'fill-color': '#333333',
+            'fill-opacity': 0.8
+        }
+
+    });
+
+    map.addSource("bleaching", {
+        "type": 'geojson',
+        data: './data/1998.geojson'
+    });
+
+    map.addLayer({
+        'id': 'mass-bleaching',
         'type': 'circle',
-        'source': {
-            type: 'geojson',
-            data: './data/1998.geojson'
-        },
+        'source': "bleaching",
         'paint': {
             'circle-radius': {
                 'base': 1.75,
@@ -58,7 +79,60 @@ map.on('load', function () {
         }
     });
 
+    // ensure that this layer is not visible to begin with
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
+    
+    // create popup but don't add to map yet
+
+    popup = new mapboxgl.Popup({closeButton: false})
+    .setLngLat([145, -19])
+    .setHTML('<h3>World Heritage Area</h3>')
+
 });
+
+// scroll actions
+
+function mapIntro () {
+
+    popup.addTo(map);
+
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 1);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');    
+
+}
+
+function map1998 () {
+
+    popup.remove();
+
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.getSource('bleaching').setData('./data/1998.geojson');
+}
+
+function map2002 () {
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.getSource('bleaching').setData('./data/2002.geojson');
+}
+
+function map2016 () {
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.getSource('bleaching').setData('./data/2016.geojson');
+}
+
+function map2016second () {
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.getSource('bleaching').setData('./data/2016.geojson');
+}
+
+function map2017 () {
+    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+    map.getSource('bleaching').setData('./data/2017.geojson');
+}
 
 // create list of locations to fly to
 
@@ -66,7 +140,7 @@ var locations = {
     'Intro': {
         bearing: 0,
         center: [145, -19],
-        zoom: 3.2,
+        zoom: 3.3,
         pitch: 0,
         speed: 0.5
     },
