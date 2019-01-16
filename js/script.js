@@ -18,8 +18,6 @@ $("#chart-container").css("height", (textHeight + placeholderHeight));
 let chartFromTop = $('#section-1').height() + $('#section-2').height();
 $("#chart-container").css("top", (chartFromTop + 10));
 
-let sectionName;
-
 $( document ).ready(function() {
 
     // scroll to top on window reload
@@ -28,7 +26,7 @@ $( document ).ready(function() {
     $textSection.each(function(){
 
         let _this = this;
-        sectionName = $(this).attr('id');
+        let sectionName = $(this).attr('id');
         let graphFunction = "triangle" + sectionName;
 
         var inViewBottom = new Waypoint({
