@@ -101,83 +101,67 @@ map.on('load', function () {
     map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
     
     // create popup but don't add to map yet
-
     popup = new mapboxgl.Popup({closeButton: false})
     .setLngLat([143.8, -10.5])
-    .setHTML('<h3>Great Barrier Reef World Heritage Area</h3>')
+    .setHTML('<h3>Great Barrier Reef World Heritage Area</h3>');
 
 });
 
-// map.on('style.load', function () {
-//     // Triggered when `setStyle` is called - on load and when change
-//     addDataLayers();
-// });
-
 // scroll actions
 
-function mapIntro1 () {
+function updateMap (sectionName) {
 
-    popup.remove();
+    // popup
+    if (sectionName == "Intro2") {
+        popup.addTo(map);
+    } else {
+        popup.remove();
+    };
 
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'none'); 
-    map.setLayoutProperty('satellite', 'visibility', 'none');   
+    // world heritage
+    if (sectionName == "Intro1") {
+        map.setPaintProperty('world-heritage-site', 'line-opacity', 0);
+    } else if (sectionName == "Intro2") {
+        map.setPaintProperty('world-heritage-site', 'line-opacity', 1);
+    } else {
+        map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
+    };
+
+    // bleaching circles and key visibility
+    if (sectionName == "Intro1" || sectionName == "Intro2") {
+        map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
+        $("#map-key").css("visibility", "hidden"); 
+    } else {
+        map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
+        $("#map-key").css("visibility", "visible"); 
+    };
+
+    // bleaching data
+    if (sectionName == "1998") {
+        map.getSource('bleaching').setData('./data/1998.geojson');
+    } else if (sectionName == "2002") {
+        map.getSource('bleaching').setData('./data/2002.geojson');
+    } else if (sectionName == "2016" || sectionName == "2016second") {
+        map.getSource('bleaching').setData('./data/2016.geojson');
+    } else if (sectionName == "2017") {
+        map.getSource('bleaching').setData('./data/2017.geojson');
+    } else {
+        // do nothing for intros
+    };
+
+    // satellite imagery and GBR features visibility
+    if (sectionName == "2016second") {
+        map.setLayoutProperty('satellite', 'visibility', 'visible');
+        map.setLayoutProperty('gbr-features', 'visibility', 'none');
+    } else {
+        map.setLayoutProperty('satellite', 'visibility', 'none');
+        map.setLayoutProperty('gbr-features', 'visibility', 'visible');
+    }
+
 
 }
 
-function mapIntro2 () {
-
-    popup.addTo(map);
-
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 1);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
-    map.setLayoutProperty('satellite', 'visibility', 'none');    
-
-}
-
-function map1998 () {
-
-    popup.remove();
-
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
-    map.setLayoutProperty('satellite', 'visibility', 'none');
-    map.getSource('bleaching').setData('./data/1998.geojson');
-}
-
-function map2002 () {
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
-    map.setLayoutProperty('satellite', 'visibility', 'none');
-    map.getSource('bleaching').setData('./data/2002.geojson');
-}
-
-function map2016 () {
-    popup.remove();
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
-    map.setLayoutProperty('satellite', 'visibility', 'none');
-    map.getSource('bleaching').setData('./data/2016.geojson');
-}
-
-function map2016second () {
-    popup.remove();
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
-    map.setLayoutProperty('gbr-features', 'visibility', 'none');
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
-    map.setLayoutProperty('satellite', 'visibility', 'visible');
-    map.getSource('bleaching').setData('./data/2016.geojson');
-}
-
-function map2017 () {
-    popup.remove();
-    map.setPaintProperty('world-heritage-site', 'line-opacity', 0.4);
-    map.setLayoutProperty('mass-bleaching', 'visibility', 'visible');
-    map.setLayoutProperty('satellite', 'visibility', 'none');
-    map.getSource('bleaching').setData('./data/2017.geojson');
-}
-
-// create list of locations to fly to
+// locations to fly to
 
 var locations = {
     'Intro1': {
@@ -220,14 +204,14 @@ var locations = {
         center: [144, -14],
         zoom: 8,
         pitch: 0.2,
-        speed: 0.5
+        speed: 0.8
     },
     '2017': {
         bearing: 0,
         center: [147.60, -18.24],
         zoom: 4.6,
         pitch: 0,
-        speed: 0.5
+        speed: 0.8
     },
 
 }

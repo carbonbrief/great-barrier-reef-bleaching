@@ -28,7 +28,6 @@ $( document ).ready(function() {
         let _this = this;
         let sectionName = $(this).attr('id');
         let graphFunction = "triangle" + sectionName;
-        let mapFunction = "map" + sectionName;
 
         var inViewBottom = new Waypoint({
             element: _this,
@@ -36,7 +35,8 @@ $( document ).ready(function() {
                 if (direction == 'down'){
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
-                    window[mapFunction]();
+                    // window[mapFunction]();
+                    updateMap(sectionName);
                     map.flyTo(locations[sectionName]);
                 } else {
                     $(this.element).animate({'opacity': 0.2});
@@ -53,7 +53,8 @@ $( document ).ready(function() {
                 } else {
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
-                    window[mapFunction]();
+                    updateMap(sectionName);
+                    // window[mapFunction]();
                     map.flyTo(locations[sectionName]);
                 }
             },
