@@ -238,7 +238,7 @@ body {
 
 .logo {
     position: fixed;
-    top: 10px;
+    top: 5px;
     left: 10px;
     z-index: 9000;
     height: 45px;
@@ -261,6 +261,7 @@ body {
     color: #ffffff;
     font-size: 12px;
     padding: 5px;
+    padding-top: 0px;
 }
 
 .share-icons .fa-stack {
