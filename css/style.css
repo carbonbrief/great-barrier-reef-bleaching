@@ -47,6 +47,11 @@ p {
     margin-inline-end: 0px;
 }
 
+.first-par {
+    font-size: 28px;
+    line-height: 44px;
+}
+
 .pullquote {
     font-style: italic;
     font-size: 32px;
@@ -129,6 +134,11 @@ body {
 .text-section p {
     font-size: 16px;
     line-height: 28px;
+}
+
+.blue-highlight {
+    background-color: rgba(198, 231, 250, 0.6);
+    padding: 5px;
 }
 
 .year-highlight {
@@ -337,6 +347,10 @@ ul {
     min-height: 100%; 
     width: auto; 
     height: auto;
+}
+
+#section-1 {
+    height: 500px;
 }
 
 
