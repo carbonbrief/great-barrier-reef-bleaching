@@ -83,6 +83,14 @@
         line-height: 36px;
     }
 
+    h3 {
+        font-size: 12px;
+    }
+
+    .list-group-item {
+        font-size: 11px;
+    }
+
     #intro-background {
         height: 250px;
     }
@@ -119,6 +127,14 @@
 
     #section-1 {
         height: 200px;
+    }
+
+    .title-highlight {
+        padding: 3px;
+    }
+
+    h1 {
+        font-size: 24px;
     }
 
 }

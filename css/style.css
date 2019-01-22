@@ -337,6 +337,11 @@ ul {
     margin: 0px;
 }
 
+.list-group-item {
+    font-family: "PT Sans", Georgia, sans-serif;
+    font-size: 13px;
+}
+
 #intro-background {
     position: absolute;
     width: 100%;
