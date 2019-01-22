@@ -4,19 +4,29 @@ const $map = $('#map');
 
 // SET ELEMENT HEIGHTS
 
-let screenHeight = $(window).height();
-$map.css("height", screenHeight);
-$paddingSection.css("height", screenHeight*0.65);
-$('.padding-section-top').css("height", screenHeight*0.5);
+function setHeights () {
 
-let textHeight = $('#text-container').height();
-$("#map-container").css("height", textHeight);
+    let screenHeight = $(window).height();
+    $map.css("height", screenHeight);
+    $paddingSection.css("height", screenHeight*0.65);
+    $('.padding-section-top').css("height", screenHeight*0.5);
 
-let placeholderHeight = $('#chart-placeholder').height();
-$("#chart-container").css("height", (textHeight + placeholderHeight));
+    let textHeight = $('#text-container').height();
+    $("#map-container").css("height", textHeight);
 
-let chartFromTop = $('#section-1').height() + $('#section-2').height();
-$("#chart-container").css("top", (chartFromTop + 10));
+    let placeholderHeight = $('#chart-placeholder').height();
+    $("#chart-container").css("height", (textHeight + placeholderHeight));
+
+    let chartFromTop = $('#section-1').height() + $('#section-2').height();
+    $("#chart-container").css("top", (chartFromTop + 10));
+
+}
+
+setHeights();
+
+window.addEventListener("resize", function(){
+    setHeights();
+}, true);
 
 $( document ).ready(function() {
 
