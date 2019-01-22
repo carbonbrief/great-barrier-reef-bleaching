@@ -8,7 +8,16 @@
         height: 30px;
     }
 
+    #intro-background {
+        height: 500px;
+    }
+
+    #section-1 {
+        height: 500px;
+    }
+
 }
+
 @media all and (max-width: 980px) {
 
     .logo {
@@ -22,9 +31,17 @@
         background-image:url(../img/logo-mobile-hover.svg);
     }
 
+    #intro-background {
+        height: 380px;
+    }
 
+    #section-1 {
+        height: 380px;
+    }
 
 }
+
+/* extra breakpoint for text */
 
 @media all and (max-width: 830px) {
 
@@ -34,7 +51,15 @@
 
 }
 
-@media all and (max-width: 736px) { 
+@media all and (max-width: 736px) {
+
+    #scroll-graphic .small {
+        position: absolute;
+    }
+
+    .text-section p {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
 
 
     p {
@@ -44,8 +69,8 @@
     }
 
     .first-par {
-        font-size: 20px;
-        line-height: 36px;
+        font-size: 18px;
+        line-height: 32px;
     }
 
     h2 {
@@ -57,6 +82,42 @@
         line-height: 36px;
     }
 
+    #intro-background {
+        height: 250px;
+    }
+
+    #section-1 {
+        height: 250px;
+    }
+
+    #linkedin {
+        display: none;
+    }
+
 }
 
-@media all and (max-width: 480px) { }
+@media all and (max-width: 480px) { 
+
+    #intro-background {
+        height: 200px;
+    }
+
+    #section-1 {
+        height: 200px;
+    }
+
+}
+
+/* extra breakpoint for intro video */
+
+@media all and (max-width: 380px) {
+
+    #intro-background {
+        height: 150px;
+    }
+
+    #section-1 {
+        height: 150px;
+    }
+
+}

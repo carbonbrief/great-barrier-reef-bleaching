@@ -28,7 +28,7 @@ window.addEventListener("resize", function(){
     setHeights();
 }, true);
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
     // scroll to top on window reload
     $(document).scrollTop(0);
@@ -72,5 +72,27 @@ $( document ).ready(function() {
         });
 
     });
+
+});
+
+$(window).on('scroll', function () {
+
+    let scrollTop = $(this).scrollTop();
+    let offset = screenHeight / 2.4;
+    let range = 250;
+    // for bringing items in
+    let calc1 = (scrollTop - offset + range) / range;
+    // for fading items away
+    let calc2 = 1 - calc1;
+
+    $("#intro-vid").css({"opacity": calc2});
+
+    if (calc2 > '1') {
+        $("#intro-vid").css({ 'opacity': 1 });
+    } else if ( calc2 < '0' ) {
+        $("#intro-vid").css({ 'opacity': 0 });
+    } else if (calc2 > '0') {
+        // do nothing
+    }
 
 });

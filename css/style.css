@@ -139,19 +139,20 @@ body {
 
 .text-section {
     opacity: 0.2;
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 .text-section p {
     font-size: 16px;
     line-height: 28px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
 
 .year-highlight {
     margin: 10px;
     padding: 5px;
     color: #FF6F61;
+    background-color: #FFFFFF;
     border: 2px solid #FF6F61;
     -moz-box-shadow:    4px 4px 0px 0px #FF6F61;
     -webkit-box-shadow: 4px 4px 0px 0px #FF6F61;
@@ -339,7 +340,7 @@ ul {
 #intro-background {
     position: absolute;
     width: 100%;
-    height: 500px;
+    height: 550px;
     z-index: -5;
     overflow: hidden;
 }
@@ -358,7 +359,7 @@ ul {
 }
 
 #section-1 {
-    height: 500px;
+    height: 550px;
 }
 
 

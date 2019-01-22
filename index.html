@@ -35,7 +35,7 @@
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     </head>
     <body>
-        <div id="intro-background" style="background-color: #f3f3f3;">
+        <div id="intro-background">
             <video autoplay="true" muted="muted" loop id="intro-vid">
                 <source src="video/hero-video.mp4" type="video/mp4">
             </video>
@@ -60,13 +60,13 @@
                     <i class="fab fa-twitter fa-stack-1x"></i>
                 </a>
             </span>
-            <span class="fa-stack">
+            <span class="fa-stack" id="facebook">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://interactive.carbonbrief.org/impacts-climate-change-one-point-five-degrees-two-degrees/?utm_source=ShareIconFacebook&utm_campaign=megagraphic" target="_blank">
                     <i class="far fa-circle fa-stack-2x"></i>
                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                 </a>
             </span>
-            <span class="fa-stack">
+            <span class="fa-stack" id="linkedin">
                 <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://interactive.carbonbrief.org/impacts-climate-change-one-point-five-degrees-two-degrees/?utm_source=ShareIconLinkedIn&utm_campaign=megagraphic&title=Interactive:%201.5C%20vs%202C&summary=Half%20a%20degree%20makes%20a%20big%20difference%20when%20judging%20how%20the%20world%20will%20experience%20climate%20change.&source=Carbon%20Brief" target="_blank">
                     <i class="far fa-circle fa-stack-2x"></i>
                     <i class="fab fa-linkedin-in fa-stack-1x"></i>
@@ -76,7 +76,7 @@
         <div class="row central" id="chart-placeholder">
             <!-- chart placeholder -->
         </div>
-        <div class="row full-width">
+        <div class="row full-width" id="scroll-graphic">
             <div id="map-container" class="large column">
                 <div id="map">
                     <div id="map-key" class="box">
