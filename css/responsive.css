@@ -58,6 +58,7 @@
     }
 
     .text-section p {
+        padding: 10px;
         background-color: rgba(255, 255, 255, 0.9);
     }
 
@@ -91,6 +92,20 @@
     }
 
     #linkedin {
+        display: none;
+    }
+
+}
+
+/* extra breakpoint for timeline */
+
+@media all and (max-width: 580px) {
+
+    #chart-container {
+        display: none;
+    }
+
+    #chart-placeholder {
         display: none;
     }
 
