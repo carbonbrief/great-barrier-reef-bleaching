@@ -3,10 +3,10 @@ const $paddingSection = $('.padding-section');
 const $map = $('#map');
 
 // SET ELEMENT HEIGHTS
+let screenHeight = $(window).height();
 
 function setHeights () {
 
-    let screenHeight = $(window).height();
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.65);
     $('.padding-section-top').css("height", screenHeight*0.5);

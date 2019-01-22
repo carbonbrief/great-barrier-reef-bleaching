@@ -177,10 +177,10 @@ body {
 .box {
     padding: 10px;
     background-color: #ffffff;
-    border: 2px solid #cecece;
-    -moz-box-shadow:    4px 4px 0px 0px #cecece;
-    -webkit-box-shadow: 4px 4px 0px 0px #cecece;
-    box-shadow:         4px 4px 0px 0px #cecece;
+    border: 2px solid #C0C9C9;
+    -moz-box-shadow:    4px 4px 0px 0px #C0C9C9;
+    -webkit-box-shadow: 4px 4px 0px 0px #C0C9C9;
+    box-shadow:         4px 4px 0px 0px #C0C9C9;
 }
 
 #chart {
@@ -280,6 +280,7 @@ body {
 
 .logo:hover {
     opacity: 1;
+    background-image:url(../img/logo-hover.svg);
 }
 
 .share-icons {
