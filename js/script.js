@@ -12,7 +12,7 @@ function setHeights () {
     screenHeight = $(window).height();
 
     $map.css("height", screenHeight);
-    $paddingSection.css("height", screenHeight*0.65);
+    $paddingSection.css("height", screenHeight*0.7);
     $('.padding-section-top').css("height", screenHeight*0.5);
 
     let textHeight = $('#text-container').height();

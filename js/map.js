@@ -85,8 +85,10 @@ map.on('load', function () {
 
     map.addSource("bleaching", {
         "type": 'geojson',
-        data: './data/1998.geojson'
+        data: './data/surveys-min.json'
     });
+
+    let filterYear = ['==', ['number', ['get', 'Year']], 1998];
 
     map.addLayer({
         'id': 'mass-bleaching',
@@ -108,6 +110,8 @@ map.on('load', function () {
             ]
         }
     });
+
+    map.setFilter("mass-bleaching", filterYear);
 
     // ensure that this layer is not visible to begin with
     map.setLayoutProperty('mass-bleaching', 'visibility', 'none');
@@ -150,13 +154,17 @@ function updateMap (sectionName) {
 
     // bleaching data
     if (sectionName == "1998") {
-        map.getSource('bleaching').setData('./data/1998.geojson');
+        filterYear = ['==', ['number', ['get', 'Year']], 1998];
+        map.setFilter("mass-bleaching", filterYear);
     } else if (sectionName == "2002") {
-        map.getSource('bleaching').setData('./data/2002.geojson');
+        filterYear = ['==', ['number', ['get', 'Year']], 2002];
+        map.setFilter("mass-bleaching", filterYear);
     } else if (sectionName == "2016" || sectionName == "2016second") {
-        map.getSource('bleaching').setData('./data/2016.geojson');
+        filterYear = ['==', ['number', ['get', 'Year']], 2016];
+        map.setFilter("mass-bleaching", filterYear);
     } else if (sectionName == "2017") {
-        map.getSource('bleaching').setData('./data/2017.geojson');
+        filterYear = ['==', ['number', ['get', 'Year']], 2017];
+        map.setFilter("mass-bleaching", filterYear);
     } else {
         // do nothing for intros
     };
