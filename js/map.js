@@ -46,7 +46,7 @@ map.on('load', function () {
         "type": 'geojson',
         "buffer": 10,
         "tolerance": 0.5, // default is 0.375
-        data: './data/GBR-world-heritage.json'
+        data: './data/GBR-heritage-min.geojson'
     });
 
     map.addLayer({
@@ -68,7 +68,7 @@ map.on('load', function () {
         "type": 'geojson',
         "buffer": 10,
         "tolerance": 0.5,
-        data: './data/GBR-features.json'
+        data: './data/GBR-features-min.geojson'
     });
     
     map.addLayer({
