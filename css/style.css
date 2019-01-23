@@ -340,6 +340,7 @@ ul {
 .list-group-item {
     font-family: "PT Sans", Georgia, sans-serif;
     font-size: 13px;
+    line-height: 22px;
 }
 
 #intro-background {

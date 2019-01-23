@@ -89,6 +89,12 @@
 
     .list-group-item {
         font-size: 11px;
+        line-height: 20px;
+    }
+
+    .colour-key {
+        width: 10px;
+        height: 10px;
     }
 
     #intro-background {
