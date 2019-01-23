@@ -19,7 +19,7 @@ function setHeights () {
     $("#map-container").css("height", textHeight);
 
     let placeholderHeight = $('#chart-placeholder').height();
-    $("#chart-container").css("height", (textHeight + placeholderHeight));
+    $("#chart-container").css("height", (textHeight + (placeholderHeight*2) - screenHeight));
 
     let chartFromTop = $('#section-1').height() + $('#section-2').height();
     $("#chart-container").css("top", (chartFromTop + 10));
@@ -49,20 +49,20 @@ $(document).ready(function() {
                 if (direction == 'down'){
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
-                    updateMap(sectionName);
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
-                        console.log("Retina " + sectionName);
+                        // console.log("Retina " + sectionName);
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
-                        console.log("Desktop " + sectionName);
+                        // console.log("Desktop " + sectionName);
                     } else if (screenHeight < 701 && screenHeight > 500) {
                         map.flyTo(locationsLaptop[sectionName]);
-                        console.log("Laptop " + sectionName);
+                        // console.log("Laptop " + sectionName);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
-                        console.log("Mobile " + sectionName);
-                    }
+                        // console.log("Mobile " + sectionName);
+                    };
+                    updateMap(sectionName);
                 } else {
                     $(this.element).animate({'opacity': 0.2});
                 }
@@ -78,7 +78,6 @@ $(document).ready(function() {
                 } else {
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
-                    updateMap(sectionName);
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
                     } else if (screenHeight < 901 && screenHeight > 700) {
@@ -87,7 +86,8 @@ $(document).ready(function() {
                         map.flyTo(locationsLaptop[sectionName]);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
-                    }
+                    };
+                    updateMap(sectionName);
                 }
             },
             offset: '15%'
