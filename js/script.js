@@ -4,8 +4,12 @@ const $map = $('#map');
 
 // SET ELEMENT HEIGHTS
 let screenHeight = $(window).height();
+// let screenWidth = $(window).width();
 
 function setHeights () {
+
+    // get new height
+    screenHeight = $(window).height();
 
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.65);
@@ -45,9 +49,20 @@ $(document).ready(function() {
                 if (direction == 'down'){
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
-                    // window[mapFunction]();
                     updateMap(sectionName);
-                    map.flyTo(locations[sectionName]);
+                    if (screenHeight > 900) {
+                        map.flyTo(locationsRetina[sectionName]);
+                        console.log("Retina " + sectionName);
+                    } else if (screenHeight < 901 && screenHeight > 700) {
+                        map.flyTo(locationsDesktop[sectionName]);
+                        console.log("Desktop " + sectionName);
+                    } else if (screenHeight < 701 && screenHeight > 500) {
+                        map.flyTo(locationsLaptop[sectionName]);
+                        console.log("Laptop " + sectionName);
+                    } else {
+                        map.flyTo(locationsMobile[sectionName]);
+                        console.log("Mobile " + sectionName);
+                    }
                 } else {
                     $(this.element).animate({'opacity': 0.2});
                 }
@@ -64,8 +79,15 @@ $(document).ready(function() {
                     $(this.element).animate({'opacity': 1});
                     window[graphFunction]();
                     updateMap(sectionName);
-                    // window[mapFunction]();
-                    map.flyTo(locations[sectionName]);
+                    if (screenHeight > 900) {
+                        map.flyTo(locationsRetina[sectionName]);
+                    } else if (screenHeight < 901 && screenHeight > 700) {
+                        map.flyTo(locationsDesktop[sectionName]);
+                    } else if (screenHeight < 701 && screenHeight > 500) {
+                        map.flyTo(locationsLaptop[sectionName]);
+                    } else {
+                        map.flyTo(locationsMobile[sectionName]);
+                    }
                 }
             },
             offset: '15%'
