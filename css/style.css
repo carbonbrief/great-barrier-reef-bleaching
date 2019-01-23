@@ -273,15 +273,17 @@ body {
     z-index: 9000;
     height: 35px;
     width: 110px;
-    background-image:url(../img/logo.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
     opacity: 0.4;
+    fill:#333333;
+}
+
+#logo-mobile {
+    display: none;
 }
 
 .logo:hover {
+    fill: #FF6F61;
     opacity: 1;
-    background-image:url(../img/logo-hover.svg);
 }
 
 .share-icons {
