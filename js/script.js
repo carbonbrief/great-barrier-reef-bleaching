@@ -117,4 +117,14 @@ $(window).on('scroll', function () {
         // do nothing
     }
 
+    // pause video when further down article
+    let vid = document.getElementById("intro-vid");
+    let introHeight  = $('#section-1').height();
+
+    if (scrollTop > introHeight) {
+        vid.pause();
+    } else {
+        vid.play();
+    }
+
 });
