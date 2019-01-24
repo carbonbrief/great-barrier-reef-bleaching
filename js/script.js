@@ -117,7 +117,7 @@ $(window).on('scroll', function () {
         // do nothing
     }
 
-    // pause video when further down article
+    // pause video when not in view
     let vid = document.getElementById("intro-vid");
     let introHeight  = $('#section-1').height();
 
