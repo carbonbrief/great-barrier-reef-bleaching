@@ -21,7 +21,7 @@ function setHeights () {
     let placeholderHeight = $('#chart-placeholder').height();
     $("#chart-container").css("height", (textHeight + (placeholderHeight*2) - screenHeight));
 
-    let chartFromTop = $('#section-1').height() + $('#section-2').height();
+    let chartFromTop = $('#section-1').height() + $('#section-2').height() + $('#section-3').height() + $('#section-4').height();
     $("#chart-container").css("top", (chartFromTop + 10));
 
 }
@@ -93,11 +93,39 @@ $(document).ready(function() {
             offset: '15%'
         });
 
+        // BLEACHING ANIMATION
+
+        // var bleachAnimationDown = new Waypoint({
+        //     element: document.getElementById("section-3"),
+        //     handler: function (direction) {
+        //         if (direction == 'down'){
+        //             $(this.element).animate({'opacity': 0.2});
+        //         } else {
+        //             // do nothing
+        //         }
+        //     },
+        //     offset: "90%"
+        // });
+
+        // var bleachAnimationUp = new Waypoint({
+        //     element: document.getElementById("section-3"),
+        //     handler: function (direction) {
+        //         if (direction == 'up'){
+        //             $(this.element).animate({'opacity': 0.2});
+        //         } else {
+        //             // do nothing
+        //         }
+        //     },
+        //     offset: "25%"
+        // });
+
     });
 
 });
 
 $(window).on('scroll', function () {
+
+    // FADE VIDEO
 
     let scrollTop = $(this).scrollTop();
     let offset = screenHeight / 2.4;
@@ -116,6 +144,20 @@ $(window).on('scroll', function () {
     } else if (calc2 > '0') {
         // do nothing
     }
+
+    // BLEACHING ANIMATION
+
+    let picFromTop = $('#section-1').height() + $('#section-2').height();
+
+    const lightness = 80;
+
+    let calc3 = (scrollTop - picFromTop + screenHeight) / screenHeight;
+
+    calc3 = calc3 < 1 ? 1 : calc3 // ensure y is always >= 1 (due to Safari's elastic scroll)
+
+    const l = lightness / calc3;
+
+    $(".coral2").css("fill", "hsl(4, 79%, " + l + "%" );
 
     // pause video when not in view
     let vid = document.getElementById("intro-vid");
