@@ -376,7 +376,7 @@ ul {
     height: auto;
 }
 
-.algae-dot{
+.algae{
     background: orange; 
     position: absolute;
     pointer-events: none;

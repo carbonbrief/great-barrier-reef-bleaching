@@ -93,6 +93,57 @@ $(document).ready(function() {
             offset: '15%'
         });
 
+        // ANIMATE ALGAE
+        // ensure that runs after anime.js has loaded
+
+        var path = anime.path(".algae-line");
+
+        var bleachAnimation1 = new Waypoint({
+            element: document.getElementById('section-3'),
+            handler: function (direction) {
+                if (direction == 'down'){
+                    console.log("algae 1");
+                    firstAlgaeOut();
+                } else {
+
+                }
+            },
+            offset: '20%'
+        });
+
+        var bleachAnimation2 = new Waypoint({
+            element: document.getElementById('section-3'),
+            handler: function (direction) {
+                if (direction == 'down'){
+                    console.log("algae 2");
+                    secondAlgaeOut();
+                } else {
+
+                }
+            },
+            offset: '60%'
+        });
+
+        function firstAlgaeOut () { anime({
+            targets: '.dot1',
+            translateX: path('x'),
+            translateY: path('y'),
+            rotate: path('angle'),
+            easing: 'linear',
+            duration: 3000,
+            loop: false
+        })};
+
+        function secondAlgaeOut () {anime({
+            targets: '.dot2',
+            translateX: path('x'),
+            translateY: path('y'),
+            rotate: path('angle'),
+            easing: 'linear',
+            duration: 3000,
+            loop: false
+        })};
+
     });
 
 });
@@ -147,24 +198,3 @@ $(window).on('scroll', function () {
     }
 
 });
-
-// ANIMATE ALGAE
-// ensure that runs after anime.js has loaded
-
-$( window ).on( "load", function() {
-
-    console.log("loaded");
-
-    var path = anime.path(".algae-line");
-
-    anime({
-        targets: '.algae-dot',
-        translateX: path('x'),
-        translateY: path('y'),
-        rotate: path('angle'),
-        easing: 'linear',
-        duration: 10000,
-        loop: true
-    });
-
-})
