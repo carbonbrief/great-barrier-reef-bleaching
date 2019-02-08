@@ -149,15 +149,22 @@ $(window).on('scroll', function () {
 });
 
 // ANIMATE ALGAE
+// ensure that runs after anime.js has loaded
 
-var path = anime.path(".algae-line");
+$( window ).on( "load", function() {
 
-anime({
-    targets: '.algae-dot',
-    translateX: path('x'),
-    translateY: path('y'),
-    rotate: path('angle'),
-    easing: 'linear',
-    duration: 10000,
-    loop: true
-});
+    console.log("loaded");
+
+    var path = anime.path(".algae-line");
+
+    anime({
+        targets: '.algae-dot',
+        translateX: path('x'),
+        translateY: path('y'),
+        rotate: path('angle'),
+        easing: 'linear',
+        duration: 10000,
+        loop: true
+    });
+
+})
