@@ -93,32 +93,6 @@ $(document).ready(function() {
             offset: '15%'
         });
 
-        // BLEACHING ANIMATION
-
-        // var bleachAnimationDown = new Waypoint({
-        //     element: document.getElementById("section-3"),
-        //     handler: function (direction) {
-        //         if (direction == 'down'){
-        //             $(this.element).animate({'opacity': 0.2});
-        //         } else {
-        //             // do nothing
-        //         }
-        //     },
-        //     offset: "90%"
-        // });
-
-        // var bleachAnimationUp = new Waypoint({
-        //     element: document.getElementById("section-3"),
-        //     handler: function (direction) {
-        //         if (direction == 'up'){
-        //             $(this.element).animate({'opacity': 0.2});
-        //         } else {
-        //             // do nothing
-        //         }
-        //     },
-        //     offset: "25%"
-        // });
-
     });
 
 });
@@ -154,16 +128,15 @@ $(window).on('scroll', function () {
     let calc3 = (scrollTop - picFromTop * 0.9 + screenHeight) / screenHeight;
 
     // ensure calc3 remains within range
-
-    calc3 = Math.min(Math.max(calc3, 1), 1.3);
+    calc3 = Math.min(Math.max(calc3, 1), 1.25);
 
     const l = lightness * calc3;
 
     $(".coral2").css("fill", "hsl(4, 79%, " + l + "%" );
 
-    console.log(calc3);
+    // PAUSE VIDEO 
+    // when not in view
 
-    // pause video when not in view
     let vid = document.getElementById("intro-vid");
     let introHeight  = $('#section-1').height();
 
@@ -173,4 +146,18 @@ $(window).on('scroll', function () {
         vid.play();
     }
 
+});
+
+// ANIMATE ALGAE
+
+var path = anime.path(".algae-line");
+
+anime({
+    targets: '.algae-dot',
+    translateX: path('x'),
+    translateY: path('y'),
+    rotate: path('angle'),
+    easing: 'linear',
+    duration: 10000,
+    loop: true
 });
