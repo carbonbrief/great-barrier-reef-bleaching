@@ -151,13 +151,17 @@ $(window).on('scroll', function () {
 
     const lightness = 80;
 
-    let calc3 = (scrollTop - picFromTop + screenHeight) / screenHeight;
+    let calc3 = (scrollTop - picFromTop * 0.9 + screenHeight) / screenHeight;
 
-    calc3 = calc3 < 1 ? 1 : calc3 // ensure y is always >= 1 (due to Safari's elastic scroll)
+    // ensure calc3 remains within range
 
-    const l = lightness / calc3;
+    calc3 = Math.min(Math.max(calc3, 1), 1.3);
+
+    const l = lightness * calc3;
 
     $(".coral2").css("fill", "hsl(4, 79%, " + l + "%" );
+
+    console.log(calc3);
 
     // pause video when not in view
     let vid = document.getElementById("intro-vid");
