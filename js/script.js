@@ -104,6 +104,7 @@ $(document).ready(function() {
                 if (direction == 'down'){
                     console.log("algae 1");
                     firstAlgaeOut();
+                    $(".dot1").css("visibility", "visible");
                 } else {
 
                 }
@@ -117,6 +118,7 @@ $(document).ready(function() {
                 if (direction == 'down'){
                     console.log("algae 2");
                     secondAlgaeOut();
+                    $(".dot2").css("visibility", "visible");
                 } else {
 
                 }
@@ -124,22 +126,26 @@ $(document).ready(function() {
             offset: '60%'
         });
 
-        function firstAlgaeOut () { anime({
+        function firstAlgaeOut () { 
+            anime({
             targets: '.dot1',
             translateX: path('x'),
             translateY: path('y'),
             rotate: path('angle'),
-            easing: 'linear',
+            opacity: 0,
+            easing: 'easeInSine',
             duration: 3000,
             loop: false
-        })};
+            })
+        };
 
         function secondAlgaeOut () {anime({
             targets: '.dot2',
             translateX: path('x'),
             translateY: path('y'),
             rotate: path('angle'),
-            easing: 'linear',
+            opacity: 0,
+            easing: 'easeInSine',
             duration: 3000,
             loop: false
         })};
