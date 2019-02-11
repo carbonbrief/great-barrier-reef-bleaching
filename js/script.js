@@ -11,6 +11,14 @@ function setHeights () {
     // get new height
     screenHeight = $(window).height();
 
+    let bleachingMargin = (screenHeight - $('.bleaching').height())/2;
+    console.log(bleachingMargin);
+    $(".bleaching").css("margin-top", bleachingMargin);
+    $(".bleaching").css("top", bleachingMargin);
+    $(".bleaching").css("margin-bottom", bleachingMargin);
+
+    $(".bleaching-wrapper").css("height", screenHeight + 400);
+
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.7);
     $('.padding-section-top').css("height", screenHeight*0.5);
@@ -28,14 +36,14 @@ function setHeights () {
 
 setHeights();
 
-window.addEventListener("resize", function(){
-    setHeights();
-}, true);
-
 $(document).ready(function() {
 
     // scroll to top on window reload
     $(document).scrollTop(0);
+
+    window.addEventListener("resize", function(){
+        setHeights();
+    }, true);
 
     $textSection.each(function(){
 
@@ -227,7 +235,7 @@ $(window).on('scroll', function () {
 
     calc4 = Math.min(Math.max(calc4, 0), 400);
 
-    console.log(calc4);
+    //console.log(calc4);
 
     
     firstAlgae.seek(firstAlgae.duration * (calc4 / 100));
