@@ -218,27 +218,24 @@ $(window).on('scroll', function () {
 
     let picFromTop = $('#section-1').height() + $('#section-2').height();
 
-    const lightness = 80;
+    const lightness = 75;
 
-    let calc3 = (scrollTop - picFromTop * 0.9 + screenHeight) / screenHeight;
+    let calc3 = (scrollTop - picFromTop + 600) / 600;
 
     // ensure calc3 remains within range
     calc3 = Math.min(Math.max(calc3, 1), 1.25);
 
     const l = lightness * calc3;
 
-    $(".st2").css("fill", "hsl(4, 79%, " + l + "%" );
+    $(".st4").css("fill", "hsl(4, 79%, " + l + "%" );
 
     // TRIGGER ALGAE ANIMATION
 
-    let calc4 = scrollTop - (picFromTop * 0.9);
+    let calc4 = scrollTop - (picFromTop);
 
     calc4 = Math.min(Math.max(calc4, 0), 400);
-
-    //console.log(calc4);
-
     
-    firstAlgae.seek(firstAlgae.duration * (calc4 / 100));
+    firstAlgae.seek(firstAlgae.duration * (calc4 / 400));
 
     // PAUSE VIDEO 
     // when not in view
