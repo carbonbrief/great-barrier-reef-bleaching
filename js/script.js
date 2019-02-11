@@ -93,64 +93,77 @@ $(document).ready(function() {
             offset: '15%'
         });
 
-        // ANIMATE ALGAE
-        // ensure that runs after anime.js has loaded
-
-        var path = anime.path(".algae-line");
-
-        var bleachAnimation1 = new Waypoint({
-            element: document.getElementById('section-3'),
-            handler: function (direction) {
-                if (direction == 'down'){
-                    console.log("algae 1");
-                    firstAlgaeOut();
-                    $(".dot1").css("visibility", "visible");
-                } else {
-
-                }
-            },
-            offset: '20%'
-        });
-
-        var bleachAnimation2 = new Waypoint({
-            element: document.getElementById('section-3'),
-            handler: function (direction) {
-                if (direction == 'down'){
-                    console.log("algae 2");
-                    secondAlgaeOut();
-                    $(".dot2").css("visibility", "visible");
-                } else {
-
-                }
-            },
-            offset: '60%'
-        });
-
-        function firstAlgaeOut () { 
-            anime({
-            targets: '.dot1',
-            translateX: path('x'),
-            translateY: path('y'),
-            rotate: path('angle'),
-            opacity: 0,
-            easing: 'easeInSine',
-            duration: 3000,
-            loop: false
-            })
-        };
-
-        function secondAlgaeOut () {anime({
-            targets: '.dot2',
-            translateX: path('x'),
-            translateY: path('y'),
-            rotate: path('angle'),
-            opacity: 0,
-            easing: 'easeInSine',
-            duration: 3000,
-            loop: false
-        })};
-
     });
+
+    // ANIMATE ALGAE
+    // ensure that runs after anime.js has loaded
+
+    
+    // Use for loop to create variables for paths
+    var paths = [];
+
+    function createPathVariables(){
+        for (var i = 0; i <= 3; ++i) {
+            paths[i] = anime.path(".path" + i);
+        }
+        return paths;
+    }
+
+    createPathVariables();
+
+
+    var bleachAnimation1 = new Waypoint({
+        element: document.getElementById('section-3'),
+        handler: function (direction) {
+            if (direction == 'down'){
+                // ensure that opacity reset to 1 before animation
+                $(".dot1").css("opacity", "1");
+                firstAlgaeOut();
+                $(".dot1").css("visibility", "visible");
+            } else {
+
+            }
+        },
+        offset: '20%'
+    });
+
+    var bleachAnimation2 = new Waypoint({
+        element: document.getElementById('section-3'),
+        handler: function (direction) {
+            if (direction == 'down'){
+                $(".dot2").css("opacity", "1");
+                secondAlgaeOut();
+                $(".dot2").css("visibility", "visible");
+            } else {
+
+            }
+        },
+        offset: '60%'
+    });
+
+    function firstAlgaeOut () { 
+        anime({
+        targets: '.dot1',
+        translateX: paths[0]('x'),
+        translateY: paths[0]('y'),
+        rotate: paths[0]('angle'),
+        opacity: 0,
+        easing: 'easeInSine',
+        duration: 3000,
+        loop: false
+        })
+    };
+
+    function secondAlgaeOut () {anime({
+        targets: '.dot2',
+        translateX: paths[1]('x'),
+        translateY: paths[1]('y'),
+        rotate: paths[1]('angle'),
+        opacity: 0,
+        easing: 'easeInSine',
+        duration: 3000,
+        loop: false
+    })};
 
 });
 
@@ -189,7 +202,7 @@ $(window).on('scroll', function () {
 
     const l = lightness * calc3;
 
-    $(".coral2").css("fill", "hsl(4, 79%, " + l + "%" );
+    $(".st2").css("fill", "hsl(4, 79%, " + l + "%" );
 
     // PAUSE VIDEO 
     // when not in view
