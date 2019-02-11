@@ -388,7 +388,7 @@ ul {
     border-radius: 5px;
     width: 10px;
     height: 10px;
-    visibility: hidden;
+    visibility: visible;
 }
 
 .st0{fill:#C6E6F9;}
