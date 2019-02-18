@@ -17,7 +17,7 @@ function setHeights () {
     $(".bleaching").css("top", bleachingMargin);
     $(".bleaching").css("margin-bottom", bleachingMargin);
 
-    $(".bleaching-wrapper").css("height", screenHeight + 400);
+    $(".bleaching-wrapper").css("height", screenHeight + 600);
 
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.7);
@@ -125,7 +125,7 @@ var firstAlgae = anime({
     rotate: path('angle'),
     delay: function(el, i) { return i * 100; },
     opacity: 0,
-    easing: 'easeInSine',
+    easing: 'linear',
     duration: 1000,
     autoplay: false
 });
@@ -171,9 +171,9 @@ $(window).on('scroll', function () {
 
     let calc4 = scrollTop - (picFromTop);
 
-    calc4 = Math.min(Math.max(calc4, 0), 400);
+    calc4 = Math.min(Math.max(calc4, 0), 600);
     
-    firstAlgae.seek(firstAlgae.duration * (calc4 / 400));
+    firstAlgae.seek(firstAlgae.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view
