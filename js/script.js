@@ -110,18 +110,16 @@ $(document).ready(function() {
 
 // append dots to DOM, three of each of twelve classes
 
-
 for (i = 0; i < 12; i++) {
-    $(".bleaching svg").append("<div class='algae dot" + i + "'></div>");
-    $(".bleaching svg").append("<div class='algae dot" + i + "'></div>");
-    $(".bleaching svg").append("<div class='algae dot" + i + "'></div>");
+    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
+    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
+    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
 }
-
 
 let path = anime.path(".path");
 
 var firstAlgae = anime({
-    targets: '.dot',
+    targets: '.dot1',
     translateX: path('x'),
     translateY: path('y'),
     rotate: path('angle'),
