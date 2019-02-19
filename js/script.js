@@ -116,14 +116,28 @@ for (i = 0; i < 12; i++) {
     $(".bleaching").append("<div class='algae dot" + i + "'></div>");
 }
 
+// var pathsCoral8 = [];
+// var pathsCoral7 = [];
+
+// var paths = function (){
+//     for (var i = 0; i <= 3; ++i) {
+//         pathsCoral8[i] = anime.path(".path" + i);
+//         pathsCoral7[i] = anime.path(".path" + i);
+//     }
+//     return [pathsCoral8, pathsCoral7];
+// }
+
+// console.log(paths);
+
 var paths = [];
 
-function createPathVariables(){
+function createPathVariables (){
     for (var i = 0; i <= 3; ++i) {
         paths[i] = anime.path(".path" + i);
     }
     return paths;
 }
+
 
 createPathVariables();
 
@@ -206,8 +220,6 @@ $(window).on('scroll', function () {
     $(".st200").css("fill", "hsl(335, 75%, " + l2 + "%" );
     // coral 2
     $(".st198").css("fill", "hsl(35, 92%, " + l + "%" );
-
-
 
     // TRIGGER ALGAE ANIMATION
 

@@ -382,6 +382,10 @@ ul {
     width: 100%;
     max-width: 1100px;
     height: auto;
+    border: 2px solid #C0C9C9;
+    -moz-box-shadow:    4px 4px 0px 0px #C0C9C9;
+    -webkit-box-shadow: 4px 4px 0px 0px #C0C9C9;
+    box-shadow:         4px 4px 0px 0px #C0C9C9;
 }
 
 .algae{
