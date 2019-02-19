@@ -17,7 +17,7 @@ function setHeights () {
     $(".bleaching").css("top", bleachingMargin);
     $(".bleaching").css("margin-bottom", bleachingMargin);
 
-    $(".bleaching-wrapper").css("height", screenHeight + 600);
+    $(".bleaching-wrapper").css("height", screenHeight + 800);
 
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.7);
@@ -116,14 +116,37 @@ for (i = 0; i < 12; i++) {
     $(".bleaching").append("<div class='algae dot" + i + "'></div>");
 }
 
-let path = anime.path(".path");
+var paths = [];
+
+function createPathVariables(){
+    for (var i = 0; i <= 3; ++i) {
+        paths[i] = anime.path(".path" + i);
+    }
+    return paths;
+}
+
+createPathVariables();
+
+// let path = anime.path(".path");
 
 var firstAlgae = anime({
     targets: '.dot1',
-    translateX: path('x'),
-    translateY: path('y'),
-    rotate: path('angle'),
+    translateX: function(el,i) { return paths[i]('x')},
+    translateY: function(el,i) { return paths[i]('y')},
+    rotate: function(el,i) { return paths[i]('angle')},
     delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var secondAlgae = anime({
+    targets: '.dot2',
+    translateX: function(el,i) { return paths[i]('x')},
+    translateY: function(el,i) { return paths[i]('y')},
+    rotate: function(el,i) { return paths[i]('angle')},
+    delay: function(el, i) { return (i * 105) + 60; },
     opacity: 0,
     easing: 'linear',
     duration: 1000,
@@ -156,16 +179,35 @@ $(window).on('scroll', function () {
 
     let picFromTop = $('#section-1').height() + $('#section-2').height();
 
-    const lightness = 75;
+    const lightness = 80;
 
-    let calc3 = (scrollTop - picFromTop + 600) / 600;
+    let calc3 = (scrollTop - picFromTop + 600) / 900;
 
     // ensure calc3 remains within range
     calc3 = Math.min(Math.max(calc3, 1), 1.25);
 
-    const l = lightness * calc3;
+    // three lightness options depending on the original lightness of the coral
 
-    $(".st4").css("fill", "hsl(4, 79%, " + l + "%" );
+    const l = lightness * calc3;
+    const l2 = l + 5
+    const l3 = l + 10
+
+    // coral 8
+    $(".st206").css("fill", "hsl(186, 70%, " + l2 + "%" );
+    // coral 7 and 6
+    $(".st205").css("fill", "hsl(269, 77%, " + l3 + "%" );
+    // coral 5 and 1
+    $(".st204").css("fill", "hsl(4, 79%, " + l + "%" );
+    $(".st196").css("fill", "hsl(4, 79%, " + l + "%" );
+    $(".st195").css("fill", "hsl(4, 79%, " + l + "%" );
+    // coral 4
+    $(".st203").css("fill", "hsl(50, 100%, " + l + "%" );
+    // coral 3
+    $(".st200").css("fill", "hsl(335, 75%, " + l2 + "%" );
+    // coral 2
+    $(".st198").css("fill", "hsl(35, 92%, " + l + "%" );
+
+
 
     // TRIGGER ALGAE ANIMATION
 
@@ -174,6 +216,7 @@ $(window).on('scroll', function () {
     calc4 = Math.min(Math.max(calc4, 0), 600);
     
     firstAlgae.seek(firstAlgae.duration * (calc4 / 600));
+    secondAlgae.seek(firstAlgae.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view
