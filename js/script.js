@@ -4,20 +4,32 @@ const $map = $('#map');
 
 // SET ELEMENT HEIGHTS
 let screenHeight = $(window).height();
-// let screenWidth = $(window).width();
+let screenWidth = $(window).width();
 
 function setHeights () {
 
-    // get new height
+    // get new height and width
     screenHeight = $(window).height();
+    screenWidth = $(window).width();
+    let $bleach = $(".bleaching");
 
-    let bleachingMargin = (screenHeight - $('.bleaching').height())/2;
-    console.log(bleachingMargin);
-    $(".bleaching").css("margin-top", bleachingMargin);
-    $(".bleaching").css("top", bleachingMargin);
-    $(".bleaching").css("margin-bottom", bleachingMargin);
+    $bleach.css("width", (screenWidth - 40));
+    // $bleach.css("margin-right", "auto");
+    // $bleach.css("margin-left", "auto");
+    let bleachWidth = $bleach.width();
+
+    // reset height before extracting it
+    $bleach.css("height", (bleachWidth * 0.6363));
+    let bleachHeight = $bleach.height();
+
+    let bleachMargin = (screenHeight - bleachHeight)/2;
+    $bleach.css("margin-top", bleachMargin);
+    $bleach.css("top", bleachMargin);
+    $bleach.css("margin-bottom", bleachMargin);
 
     $(".bleaching-wrapper").css("height", screenHeight + 800);
+    $(".bleaching-wrapper").css("margin-left", "auto");
+    $(".bleaching-wrapper").css("margin-right", "auto");
 
     $map.css("height", screenHeight);
     $paddingSection.css("height", screenHeight*0.7);
