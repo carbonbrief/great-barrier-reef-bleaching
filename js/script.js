@@ -150,7 +150,7 @@ $(".dot3, .dot11").css("background-color", "#f4b3ce");
 // coral 4
 $(".dot4, .dot12").css("background-color", "#ffefa2");
 // coral 6 and 7
-$(".dot6, .dot14, dot.7, .dot15").css("background-color", "#dbc1f7");
+$(".dot6, .dot14, .dot7, .dot15").css("background-color", "#dbc1f7");
 // coral 8
 $(".dot8, .dot16").css("background-color", "#c1eff4");
 
@@ -181,7 +181,7 @@ function createPathVariables (){
     for (var i = 0; i <= 7; i++) {
         let name = "paths" + (i + 1);
         for (var j = 0; j <= 3; j++) {
-            eval(name)[j] = anime.path(".path" + j);
+            eval(name)[j] = anime.path(".path_" + (i + 1) + "_" + j);
         }
     }
     return eval(name)
@@ -191,8 +191,8 @@ createPathVariables();
 
 // let path = anime.path(".path");
 
-var coral8Algae1 = anime({
-    targets: '.dot8',
+var coral7Algae1 = anime({
+    targets: '.dot7',
     translateX: function(el,i) { return paths7[i]('x')},
     translateY: function(el,i) { return paths7[i]('y')},
     rotate: function(el,i) { return paths7[i]('angle')},
@@ -203,11 +203,35 @@ var coral8Algae1 = anime({
     autoplay: false
 });
 
-var coral8Algae2 = anime({
-    targets: '.dot16',
+var coral7Algae2 = anime({
+    targets: '.dot15',
     translateX: function(el,i) { return paths7[i]('x')},
     translateY: function(el,i) { return paths7[i]('y')},
     rotate: function(el,i) { return paths7[i]('angle')},
+    delay: function(el, i) { return (i * 105) + 60; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral8Algae1 = anime({
+    targets: '.dot8',
+    translateX: function(el,i) { return paths8[i]('x')},
+    translateY: function(el,i) { return paths8[i]('y')},
+    rotate: function(el,i) { return paths8[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral8Algae2 = anime({
+    targets: '.dot16',
+    translateX: function(el,i) { return paths8[i]('x')},
+    translateY: function(el,i) { return paths8[i]('y')},
+    rotate: function(el,i) { return paths8[i]('angle')},
     delay: function(el, i) { return (i * 105) + 60; },
     opacity: 0,
     easing: 'linear',
@@ -275,6 +299,8 @@ $(window).on('scroll', function () {
 
     calc4 = Math.min(Math.max(calc4, 0), 600);
     
+    coral7Algae1.seek(coral7Algae1.duration * (calc4 / 600));
+    coral7Algae2.seek(coral7Algae2.duration * (calc4 / 600));
     coral8Algae1.seek(coral8Algae1.duration * (calc4 / 600));
     coral8Algae2.seek(coral8Algae2.duration * (calc4 / 600));
 
