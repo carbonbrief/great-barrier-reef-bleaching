@@ -133,13 +133,26 @@ $(document).ready(function() {
 // ALGAE ANIMATION
 // set up animation to be triggered in scroll event
 
-// append dots to DOM, three of each of twelve classes
-
-for (i = 0; i < 12; i++) {
-    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
-    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
-    $(".bleaching").append("<div class='algae dot" + i + "'></div>");
+// append dots to DOM
+// 2x3 for each of the 8 corals
+for (i = 0; i < 16; i++) {
+    $(".bleaching").append("<div class='algae dot" + (i + 1) + "'></div>");
+    $(".bleaching").append("<div class='algae dot" + (i + 1) + "'></div>");
+    $(".bleaching").append("<div class='algae dot" + (i + 1) + "'></div>");
 }
+
+// colour algae for coral 1 and coral 5
+$(".dot1, .dot9, .dot5, .dot13").css("background-color", "#f4a7a2");
+// coral 2
+$(".dot2, .dot10").css("background-color", "#fac883");
+// coral 3
+$(".dot3, .dot11").css("background-color", "#f4b3ce");
+// coral 4
+$(".dot4, .dot12").css("background-color", "#ffefa2");
+// coral 6 and 7
+$(".dot6, .dot14, dot.7, .dot15").css("background-color", "#dbc1f7");
+// coral 8
+$(".dot8, .dot16").css("background-color", "#c1eff4");
 
 // var pathsCoral8 = [];
 // var pathsCoral7 = [];
@@ -163,13 +176,12 @@ function createPathVariables (){
     return paths;
 }
 
-
 createPathVariables();
 
 // let path = anime.path(".path");
 
 var firstAlgae = anime({
-    targets: '.dot1',
+    targets: '.dot8',
     translateX: function(el,i) { return paths[i]('x')},
     translateY: function(el,i) { return paths[i]('y')},
     rotate: function(el,i) { return paths[i]('angle')},
@@ -181,7 +193,7 @@ var firstAlgae = anime({
 });
 
 var secondAlgae = anime({
-    targets: '.dot2',
+    targets: '.dot16',
     translateX: function(el,i) { return paths[i]('x')},
     translateY: function(el,i) { return paths[i]('y')},
     rotate: function(el,i) { return paths[i]('angle')},
