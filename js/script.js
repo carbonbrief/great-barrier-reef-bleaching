@@ -12,15 +12,28 @@ function setHeights () {
     screenHeight = $(window).height();
     screenWidth = $(window).width();
     let $bleach = $(".bleaching");
+    let bleachWidth;
+    let bleachHeight;
 
-    $bleach.css("width", (screenWidth - 40));
-    // $bleach.css("margin-right", "auto");
-    // $bleach.css("margin-left", "auto");
-    let bleachWidth = $bleach.width();
+    // check whether height or width will be the limiting factor for the scale of the bleaching animation
+    // reset before updating variables
+    if (screenHeight < (screenWidth * 0.6363)) {
 
-    // reset height before extracting it
-    $bleach.css("height", (bleachWidth * 0.6363));
-    let bleachHeight = $bleach.height();
+        $bleach.css("height", (screenHeight - 40));
+        bleachHeight = $bleach.height();
+
+        $bleach.css("width", (bleachHeight * 1.5714));
+        bleachWidth = $bleach.width();
+        
+    } else {
+
+        $bleach.css("width", (screenWidth - 40));
+        bleachWidth = $bleach.width();
+    
+        $bleach.css("height", (bleachWidth * 0.6363));
+        bleachHeight = $bleach.height();
+
+    }
 
     let bleachMargin = (screenHeight - bleachHeight)/2;
     $bleach.css("margin-top", bleachMargin);
