@@ -189,8 +189,6 @@ function createPathVariables (){
 
 createPathVariables();
 
-// let path = anime.path(".path");
-
 var coral7Algae1 = anime({
     targets: '.dot7',
     translateX: function(el,i) { return paths7[i]('x')},
@@ -275,23 +273,23 @@ $(window).on('scroll', function () {
     // three lightness options depending on the original lightness of the coral
 
     const l = lightness * calc3;
-    const l2 = l + 5
-    const l3 = l + 10
+    const l2 = l + 4
+    const l3 = l + 8
 
     // coral 8
-    $(".st206").css("fill", "hsl(186, 70%, " + l2 + "%" );
+    $(".st208").css("fill", "hsl(186, 70%, " + l2 + "%" );
     // coral 7 and 6
     $(".st205").css("fill", "hsl(269, 77%, " + l3 + "%" );
     // coral 5 and 1
     $(".st204").css("fill", "hsl(4, 79%, " + l + "%" );
-    $(".st196").css("fill", "hsl(4, 79%, " + l + "%" );
     $(".st195").css("fill", "hsl(4, 79%, " + l + "%" );
+    $(".st196").css("fill", "hsl(4, 79%, " + l + "%" );
     // coral 4
-    $(".st203").css("fill", "hsl(50, 100%, " + l + "%" );
+    $(".st202").css("fill", "hsl(50, 100%, " + l + "%" );
     // coral 3
-    $(".st200").css("fill", "hsl(335, 75%, " + l2 + "%" );
+    $(".st199").css("fill", "hsl(335, 75%, " + l2 + "%" );
     // coral 2
-    $(".st198").css("fill", "hsl(35, 92%, " + l + "%" );
+    $(".st197").css("fill", "hsl(35, 92%, " + l + "%" );
 
     // TRIGGER ALGAE ANIMATION
 
