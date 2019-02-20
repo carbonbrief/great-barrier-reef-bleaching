@@ -167,24 +167,38 @@ $(".dot8, .dot16").css("background-color", "#c1eff4");
 
 // console.log(paths);
 
-var paths = [];
+var paths1 = [];
+var paths2 = [];
+var paths3 = [];
+var paths4 = [];
+var paths5 = [];
+var paths6 = [];
+var paths7 = [];
+var paths8 = [];
+
 
 function createPathVariables (){
-    for (var i = 0; i <= 3; ++i) {
-        paths[i] = anime.path(".path" + i);
+    for (var i = 0; i <= 7; i++) {
+        let name = "paths" + (i + 1);
+        console.log(name);
+        for (var j = 0; j <= 3; j++) {
+            eval(name)[j] = anime.path(".path" + j);
+        }
     }
-    return paths;
+    return eval(name)
 }
 
 createPathVariables();
 
+console.log(paths8);
+
 // let path = anime.path(".path");
 
-var firstAlgae = anime({
+var coral8Algae1 = anime({
     targets: '.dot8',
-    translateX: function(el,i) { return paths[i]('x')},
-    translateY: function(el,i) { return paths[i]('y')},
-    rotate: function(el,i) { return paths[i]('angle')},
+    translateX: function(el,i) { return paths8[i]('x')},
+    translateY: function(el,i) { return paths8[i]('y')},
+    rotate: function(el,i) { return paths8[i]('angle')},
     delay: function(el, i) { return i * 100; },
     opacity: 0,
     easing: 'linear',
@@ -192,11 +206,11 @@ var firstAlgae = anime({
     autoplay: false
 });
 
-var secondAlgae = anime({
+var coral8Algae2 = anime({
     targets: '.dot16',
-    translateX: function(el,i) { return paths[i]('x')},
-    translateY: function(el,i) { return paths[i]('y')},
-    rotate: function(el,i) { return paths[i]('angle')},
+    translateX: function(el,i) { return paths8[i]('x')},
+    translateY: function(el,i) { return paths8[i]('y')},
+    rotate: function(el,i) { return paths8[i]('angle')},
     delay: function(el, i) { return (i * 105) + 60; },
     opacity: 0,
     easing: 'linear',
@@ -264,8 +278,8 @@ $(window).on('scroll', function () {
 
     calc4 = Math.min(Math.max(calc4, 0), 600);
     
-    firstAlgae.seek(firstAlgae.duration * (calc4 / 600));
-    secondAlgae.seek(firstAlgae.duration * (calc4 / 600));
+    coral8Algae1.seek(coral8Algae1.duration * (calc4 / 600));
+    coral8Algae2.seek(coral8Algae2.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view
