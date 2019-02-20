@@ -180,7 +180,6 @@ var paths8 = [];
 function createPathVariables (){
     for (var i = 0; i <= 7; i++) {
         let name = "paths" + (i + 1);
-        console.log(name);
         for (var j = 0; j <= 3; j++) {
             eval(name)[j] = anime.path(".path" + j);
         }
@@ -190,15 +189,13 @@ function createPathVariables (){
 
 createPathVariables();
 
-console.log(paths8);
-
 // let path = anime.path(".path");
 
 var coral8Algae1 = anime({
     targets: '.dot8',
-    translateX: function(el,i) { return paths8[i]('x')},
-    translateY: function(el,i) { return paths8[i]('y')},
-    rotate: function(el,i) { return paths8[i]('angle')},
+    translateX: function(el,i) { return paths7[i]('x')},
+    translateY: function(el,i) { return paths7[i]('y')},
+    rotate: function(el,i) { return paths7[i]('angle')},
     delay: function(el, i) { return i * 100; },
     opacity: 0,
     easing: 'linear',
@@ -208,9 +205,9 @@ var coral8Algae1 = anime({
 
 var coral8Algae2 = anime({
     targets: '.dot16',
-    translateX: function(el,i) { return paths8[i]('x')},
-    translateY: function(el,i) { return paths8[i]('y')},
-    rotate: function(el,i) { return paths8[i]('angle')},
+    translateX: function(el,i) { return paths7[i]('x')},
+    translateY: function(el,i) { return paths7[i]('y')},
+    rotate: function(el,i) { return paths7[i]('angle')},
     delay: function(el, i) { return (i * 105) + 60; },
     opacity: 0,
     easing: 'linear',
