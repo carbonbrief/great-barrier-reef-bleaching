@@ -189,6 +189,151 @@ function createPathVariables (){
 
 createPathVariables();
 
+var coral1Algae1 = anime({
+    targets: '.dot1',
+    translateX: function(el,i) { return paths1[i]('x')},
+    translateY: function(el,i) { return paths1[i]('y')},
+    rotate: function(el,i) { return paths1[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral1Algae2 = anime({
+    targets: '.dot9',
+    translateX: function(el,i) { return paths1[i]('x')},
+    translateY: function(el,i) { return paths1[i]('y')},
+    rotate: function(el,i) { return paths1[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 250; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral2Algae1 = anime({
+    targets: '.dot2',
+    translateX: function(el,i) { return paths2[i]('x')},
+    translateY: function(el,i) { return paths2[i]('y')},
+    rotate: function(el,i) { return paths2[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral2Algae2 = anime({
+    targets: '.dot10',
+    translateX: function(el,i) { return paths2[i]('x')},
+    translateY: function(el,i) { return paths2[i]('y')},
+    rotate: function(el,i) { return paths2[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 200; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral3Algae1 = anime({
+    targets: '.dot3',
+    translateX: function(el,i) { return paths3[i]('x')},
+    translateY: function(el,i) { return paths3[i]('y')},
+    rotate: function(el,i) { return paths3[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral3Algae2 = anime({
+    targets: '.dot11',
+    translateX: function(el,i) { return paths3[i]('x')},
+    translateY: function(el,i) { return paths3[i]('y')},
+    rotate: function(el,i) { return paths3[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 150; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral4Algae1 = anime({
+    targets: '.dot4',
+    translateX: function(el,i) { return paths4[i]('x')},
+    translateY: function(el,i) { return paths4[i]('y')},
+    rotate: function(el,i) { return paths4[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral4Algae2 = anime({
+    targets: '.dot12',
+    translateX: function(el,i) { return paths4[i]('x')},
+    translateY: function(el,i) { return paths4[i]('y')},
+    rotate: function(el,i) { return paths4[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 250; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral5Algae1 = anime({
+    targets: '.dot5',
+    translateX: function(el,i) { return paths5[i]('x')},
+    translateY: function(el,i) { return paths5[i]('y')},
+    rotate: function(el,i) { return paths5[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral5Algae2 = anime({
+    targets: '.dot13',
+    translateX: function(el,i) { return paths5[i]('x')},
+    translateY: function(el,i) { return paths5[i]('y')},
+    rotate: function(el,i) { return paths5[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 150; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+
+var coral6Algae1 = anime({
+    targets: '.dot6',
+    translateX: function(el,i) { return paths6[i]('x')},
+    translateY: function(el,i) { return paths6[i]('y')},
+    rotate: function(el,i) { return paths6[i]('angle')},
+    delay: function(el, i) { return i * 100; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var coral6Algae2 = anime({
+    targets: '.dot14',
+    translateX: function(el,i) { return paths6[i]('x')},
+    translateY: function(el,i) { return paths6[i]('y')},
+    rotate: function(el,i) { return paths6[i]('angle')},
+    delay: function(el, i) { return (i * 110) + 150; },
+    opacity: 0,
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
 var coral7Algae1 = anime({
     targets: '.dot7',
     translateX: function(el,i) { return paths7[i]('x')},
@@ -206,7 +351,7 @@ var coral7Algae2 = anime({
     translateX: function(el,i) { return paths7[i]('x')},
     translateY: function(el,i) { return paths7[i]('y')},
     rotate: function(el,i) { return paths7[i]('angle')},
-    delay: function(el, i) { return (i * 105) + 60; },
+    delay: function(el, i) { return (i * 110) + 150; },
     opacity: 0,
     easing: 'linear',
     duration: 1000,
@@ -230,7 +375,7 @@ var coral8Algae2 = anime({
     translateX: function(el,i) { return paths8[i]('x')},
     translateY: function(el,i) { return paths8[i]('y')},
     rotate: function(el,i) { return paths8[i]('angle')},
-    delay: function(el, i) { return (i * 105) + 60; },
+    delay: function(el, i) { return (i * 110) + 200; },
     opacity: 0,
     easing: 'linear',
     duration: 1000,
@@ -296,11 +441,21 @@ $(window).on('scroll', function () {
     let calc4 = scrollTop - (picFromTop);
 
     calc4 = Math.min(Math.max(calc4, 0), 600);
+
+    for (var i = 0; i <= 7; i++) {
+        let name1 = "coral" + (i + 1) + "Algae1";
+        let name2 = "coral" + (i + 1) + "Algae2";
+
+        eval(name1).seek(eval(name1).duration * (calc4 / 600));
+        eval(name2).seek(eval(name2).duration * (calc4 / 600));
+    }
     
-    coral7Algae1.seek(coral7Algae1.duration * (calc4 / 600));
-    coral7Algae2.seek(coral7Algae2.duration * (calc4 / 600));
-    coral8Algae1.seek(coral8Algae1.duration * (calc4 / 600));
-    coral8Algae2.seek(coral8Algae2.duration * (calc4 / 600));
+    // coral6Algae1.seek(coral6Algae1.duration * (calc4 / 600));
+    // coral6Algae2.seek(coral6Algae2.duration * (calc4 / 600));
+    // coral7Algae1.seek(coral7Algae1.duration * (calc4 / 600));
+    // coral7Algae2.seek(coral7Algae2.duration * (calc4 / 600));
+    // coral8Algae1.seek(coral8Algae1.duration * (calc4 / 600));
+    // coral8Algae2.seek(coral8Algae2.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view
