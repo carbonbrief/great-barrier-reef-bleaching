@@ -465,6 +465,31 @@ var coral8Algae3 = anime({
     autoplay: false
 });
 
+// FISH ANIMATION
+
+var fishPath1 = anime.path('.fish1path');
+var fishPath2 = anime.path('.fish2path');
+
+var fish1 = anime({
+    targets: '.fish1',
+    translateX: fishPath1('x'),
+    translateY: fishPath1('y'),
+    rotate: fishPath1('angle'),
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var fish2 = anime({
+    targets: '.fish2',
+    translateX: fishPath2('x'),
+    translateY: fishPath2('y'),
+    rotate: fishPath2('angle'),
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
 $(window).on('scroll', function () {
 
     // FADE VIDEO
@@ -534,6 +559,13 @@ $(window).on('scroll', function () {
         eval(name2).seek(eval(name2).duration * (calc4 / 600));
         eval(name3).seek(eval(name3).duration * (calc4 / 600));
     }
+
+    // TRIGGER FISH ANIMATION
+
+    let calc5 = Math.min(Math.max(calc4, 0), 800);
+
+    fish1.seek(fish1.duration * (calc4 / 600));
+    fish2.seek(fish2.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view

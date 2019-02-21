@@ -383,9 +383,10 @@ ul {
     -moz-box-shadow:    4px 4px 0px 0px #C0C9C9;
     -webkit-box-shadow: 4px 4px 0px 0px #C0C9C9;
     box-shadow:         4px 4px 0px 0px #C0C9C9;
+    overflow: hidden;
 }
 
-.algae{
+.algae {
     background: #f1938c; 
     position: absolute;
     pointer-events: none;
@@ -398,6 +399,22 @@ ul {
     width: 8px;
     height: 8px;
     visibility: visible;
+}
+
+.animation {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.fish1 {
+    width: 60px;
+    height: 40px;
+}
+
+.fish2 {
+    width: 80px;
+    height: 33px;
 }
 
 .st0{fill:url(#SVGID_1_);}
@@ -607,6 +624,10 @@ ul {
 	.st205{fill:#DBC1F7;}
 	.st208{fill:#C1EFF4;}
 	.st209{fill:url(#SVGID_191_);}
-	.st210{opacity:0.5;fill:url(#SVGID_192_);}
+    .st210{opacity:0.5;fill:url(#SVGID_192_);}
+    
+    /* fish */
+    .st211{fill:#2d95b4;}
+    .st212{opacity:0.7;fill:#2d95b4;}
 
 
