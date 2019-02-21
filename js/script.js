@@ -527,6 +527,12 @@ $(window).on('scroll', function () {
 
     let picFromTop = $('#section-1').height() + $('#section-2').height();
 
+    if (picFromTop > scrollTop) {
+        $(".algae").css("visibility", "hidden");
+    } else {
+        $(".algae").css("visibility", "visible");
+    }
+
     const lightness = 80;
 
     let calc3 = (scrollTop - picFromTop + 600) / 900;
