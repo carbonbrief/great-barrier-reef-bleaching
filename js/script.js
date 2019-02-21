@@ -19,7 +19,7 @@ function setHeights () {
     // reset before updating variables
     if (screenHeight < (screenWidth * 0.6363)) {
 
-        $bleach.css("height", (screenHeight - 60));
+        $bleach.css("height", (screenHeight - 80));
         bleachHeight = $bleach.height();
 
         $bleach.css("width", (bleachHeight * 1.5714));
@@ -27,7 +27,7 @@ function setHeights () {
         
     } else {
 
-        $bleach.css("width", (screenWidth - 60));
+        $bleach.css("width", (screenWidth - 80));
         bleachWidth = $bleach.width();
     
         $bleach.css("height", (bleachWidth * 0.6363));
