@@ -422,6 +422,16 @@ ul {
     height: 46px;
 }
 
+.rays {
+    width: 100%;
+    height: 100%;
+}
+
+.sun {
+    width: 100%;
+    height: 100%;
+}
+
 .st0{fill:url(#SVGID_1_);}
 	.st1{fill:url(#SVGID_2_);}
 	.st2{fill:url(#SVGID_3_);}
