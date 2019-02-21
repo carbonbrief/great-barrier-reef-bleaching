@@ -469,6 +469,7 @@ var coral8Algae3 = anime({
 
 var fishPath1 = anime.path('.fish1path');
 var fishPath2 = anime.path('.fish2path');
+var fishPath3 = anime.path('.fish3path');
 
 var fish1 = anime({
     targets: '.fish1',
@@ -485,6 +486,16 @@ var fish2 = anime({
     translateX: fishPath2('x'),
     translateY: fishPath2('y'),
     rotate: fishPath2('angle'),
+    easing: 'linear',
+    duration: 1000,
+    autoplay: false
+});
+
+var fish3 = anime({
+    targets: '.fish3',
+    translateX: fishPath3('x'),
+    translateY: fishPath3('y'),
+    rotate: fishPath3('angle'),
     easing: 'linear',
     duration: 1000,
     autoplay: false
@@ -566,6 +577,7 @@ $(window).on('scroll', function () {
 
     fish1.seek(fish1.duration * (calc4 / 600));
     fish2.seek(fish2.duration * (calc4 / 600));
+    fish3.seek(fish3.duration * (calc4 / 600));
 
     // PAUSE VIDEO 
     // when not in view
