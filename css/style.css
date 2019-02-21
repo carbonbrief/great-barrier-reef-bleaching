@@ -373,9 +373,10 @@ ul {
 .bleaching {
     position: sticky;
     position: -webkit-sticky;
+    /* to stop scroll animation flickering in Safari */
+    -webkit-transform-style: preserve-3d;
     top: 0;
     width: calc(100% - 40px);
-    max-width: 1100px;
     height: auto;
     margin-right: auto;
     margin-left: auto;
