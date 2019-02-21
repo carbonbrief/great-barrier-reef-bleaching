@@ -42,6 +42,28 @@
         height: 380px;
     }
 
+    .algae {
+        width: 7px;
+        height: 7px;
+        top: -7px;
+        left: -7px;
+    }
+
+    .fish1 {
+        width: 50px;
+        height: 33px;
+    }
+    
+    .fish2 {
+        width: 65px;
+        height: 27px;
+    }
+    
+    .fish3 {
+        width: 60px;
+        height: 39px;
+    }
+
 }
 
 /* extra breakpoint for text */
@@ -110,6 +132,28 @@
 
     #linkedin {
         display: none;
+    }
+
+    .algae {
+        width: 6px;
+        height: 6px;
+        top: -6px;
+        left: -6px;
+    }
+
+    .fish1 {
+        width: 40px;
+        height: 26.5px;
+    }
+    
+    .fish2 {
+        width: 55px;
+        height: 23px;
+    }
+    
+    .fish3 {
+        width: 50px;
+        height: 32.5px;
     }
 
 }
