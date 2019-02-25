@@ -40,7 +40,7 @@ function setHeights () {
     $bleach.css("top", bleachMargin);
     $bleach.css("margin-bottom", bleachMargin);
 
-    $(".bleaching-wrapper").css("height", screenHeight + 800);
+    $(".bleaching-wrapper").css("height", screenHeight + 700);
     $(".bleaching-wrapper").css("margin-left", "auto");
     $(".bleaching-wrapper").css("margin-right", "auto");
 
