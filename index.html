@@ -11,7 +11,7 @@
         <meta name="twitter:creator" content="@_rospearce @daisydunnesci" />
         <meta property="og:url"                content="https://interactive.carbonbrief.org/xxxxxxx/" />
         <meta property="og:type"               content="article" />
-        <meta property="og:title"              content="Interactive: Bleaching events at the Great Barrier Reef" />
+        <meta property="og:title"              content="Interactive: Can the Great Barrier Reef survive climate change?" />
         <meta property="og:description"        content="xxxxxx" />
         <meta property="og:image"              content="wp-link" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,6 +20,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
         <script src="js/anime.min.js"></script>
+        <script src="js/stickyfill.min.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19777583-2"></script>
         <script>
@@ -52,8 +53,9 @@
             </div>
         </div>
         <div class="row full-width" id="section-3">
+            <a name="bleaching"></a>
             <div class="bleaching-wrapper">
-                <div class="bleaching">
+                <div class="bleaching sticky">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 1100 700" style="enable-background:new 0 0 1100 700;" xml:space="preserve">
                         <g id="Sea">
@@ -2867,11 +2869,12 @@
             </span>
         </div>
         <div class="row central" id="chart-placeholder">
+            <a name="map"></a>
             <!-- chart placeholder -->
         </div>
         <div class="row full-width" id="scroll-graphic">
             <div id="map-container" class="large column">
-                <div id="map">
+                <div id="map" class="sticky">
                     <div id="map-key" class="box">
                         <ul id="list-group">
                             <li class="list-group-item">
@@ -2937,7 +2940,6 @@
                 <p>We gotta burn the rain forest, dump toxic waste, pollute the air, and rip up the OZONE! 'Cause maybe if we screw up this planet enough, they won't want it anymore! Did he just throw my cat out of the window? Hey, you know how I'm, like, always trying to save the planet? Here's my chance.</p>
                 <p class="pullquote">“God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.”</p>
                 <p>Must go faster. Must go faster. Is this my espresso machine? Wh-what is-h-how did you get my espresso machine? I gave it a cold? I gave it a virus. A computer virus. You know what? It is beets. I've crashed into a beet truck. This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows.</p>
-                <a name="el-nino"></a>
                 <div id="nino-wrapper">
                     <iframe id="ai2html" frameborder="0" src="javascript:void(0);" scrolling="no"></iframe>
                 </div>
@@ -2954,9 +2956,9 @@
             <div>
                 <p>You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? So you two dig up, dig up dinosaurs? We gotta burn the rain forest, dump toxic waste, pollute the air, and rip up the OZONE! 'Cause maybe if we screw up this planet enough, they won't want it anymore!</p>
             </div>
-        <div>
+        </div>
         <div id="chart-container">
-            <div id="chart-wrapper" class="box">
+            <div id="chart-wrapper" class="box sticky">
                 <div id="chart">
                     <h3>Timeline: <span class="text-key sb">bleaching</span> and <span class="text-key b">mass bleaching</span> events on the reef</h3>
                 </div>
@@ -2964,7 +2966,7 @@
         </div>
         <script src="js/script.js"></script>
         <script src="js/chart.js"></script>
-        <!-- <script src="js/map.js"></script> -->
+        <script src="js/map.js"></script>
         <script src="js/el-nino.js"></script>
         <!-- Script needed for the popup share icon to work -->
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

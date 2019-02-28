@@ -701,3 +701,12 @@ ul {
     .st212{opacity:0.7;fill:#2d95b4;}
 
 
+/* clearfix for sticky elements */
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+

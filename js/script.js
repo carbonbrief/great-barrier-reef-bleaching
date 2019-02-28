@@ -598,3 +598,11 @@ $(window).on('scroll', function () {
     }
 
 });
+
+// position sticky polyfill
+
+$(document).ready(function() {
+    let elements = $('.sticky');
+    Stickyfill.add(elements);
+});
+
