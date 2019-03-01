@@ -112,11 +112,13 @@ body {
 }
 
 .large {
+    -ms-flex: 2 0 0;
     -webkit-flex: 2 0 0;
     flex: 2 0 0;
 }
 
 .small {
+    -ms-flex: 1 0 0;
     -webkit-flex: 1 0 0;
     flex: 1 0 0;
 }

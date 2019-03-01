@@ -1,5 +1,6 @@
 if (!mapboxgl.supported()) {
     // do something
+    $("#map").append("<p>Your browser does not support Mapbox GL</p>");
 } else {
     var map = new mapboxgl.Map({
         container: 'map',
