@@ -62,6 +62,15 @@ p {
     line-height: 44px;
 }
 
+.long-quote {
+    margin-left: 2em;
+    padding-left: 1em;
+    border-left: 3px solid #FF6F61;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+}
+
 .pullquote {
     font-style: italic;
     font-size: 32px;
