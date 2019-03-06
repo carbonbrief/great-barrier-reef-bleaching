@@ -203,7 +203,7 @@ figure {
 
 #chart-wrapper {
     /* fixed width so don't have issues with pointer alignment */
-    width: 400px;
+    width: 320px;
     height: 120px;
     margin-left: auto;
     margin-right: auto;
@@ -248,15 +248,8 @@ figure {
 .text-key {
     padding: 2px;
     border-radius: 4px;
-}
-
-.b {
     background-color: #ff6e61;
     color: #FFFFFF;
-}
-
-.sb {
-    background-color: #FFDBD7;
 }
 
 .axis text {

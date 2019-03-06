@@ -1,11 +1,11 @@
 var chart = d3.select("#chart"),
-    margin = {top: 25, right: 10, bottom: 30, left: 0},
+    margin = {top: 25, right: 10, bottom: 30, left: 10},
     width = parseInt(chart.style("width"))  - margin.left - margin.right,
     height = parseInt(chart.style("height"))  - margin.top - margin.bottom - 20;
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
-    color = d3.scaleOrdinal().domain(["n", "b", "sb"]).range(["#FFDBD7", "#E8F5FD", "#FF6F61"]);
+    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#E8F5FD", "#FF6F61"]);
 
 var svg = chart.append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -35,7 +35,7 @@ d3.csv("./data/years.csv").then(function (data) {
     .attr("class", "axis")
     .attr("transform", "translate(0," + (height + 10) + ")")
     .call(d3.axisBottom(x)
-        .tickValues([1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015])
+        .tickValues([1990, 1995, 2000, 2005, 2010, 2015])
     );
 
     svg.selectAll(".bar")
@@ -61,7 +61,7 @@ d3.csv("./data/years.csv").then(function (data) {
     .on("mouseout", mouseout)
     .on("click", mouseclick);
 
-    var trianglePoints = x(1980) + ' ' + y(1.3) + ', ' + x(1981) + ' ' + y(1.1) + ', ' + x(1982) + ' ' + y(1.3) + ' ' + x(1980) + ', ' + y(1.3);
+    var trianglePoints = x(1990) + ' ' + y(1.3) + ', ' + x(1991) + ' ' + y(1.1) + ', ' + x(1992) + ' ' + y(1.3) + ' ' + x(1990) + ', ' + y(1.3);
 
     triangle = svg.append('polyline')
         .attr('points', trianglePoints)
@@ -90,7 +90,7 @@ d3.csv("./data/years.csv").then(function (data) {
         .attr("transform", "translate(2.5,4.1)");
 
     tooltip.attr("opacity", 0)
-        .attr("transform", "translate(" + (x(1980) - tooltipWidth/2) + "," + y(1.9) + ")");
+        .attr("transform", "translate(" + (x(1990) - tooltipWidth/2) + "," + y(1.9) + ")");
 
 })
 
@@ -140,13 +140,13 @@ function triangleIntro1 (){
     triangle.transition()
     .duration(500)
     .style("opacity", 0)
-    .attr("transform", "translate(" + (x(1980) + triangleWidth/2) + ",0)scale(0.5,1)");
+    .attr("transform", "translate(" + (x(1990) + triangleWidth/3) + ",0)scale(0.5,1)");
 
 
     tooltip.transition()
         .duration(500)
         .style("opacity", 0)
-        .attr("transform", "translate(" + (x(1981) - tooltipWidth/2.5) + "," + y(1.9) + ")")
+        .attr("transform", "translate(" + (x(1991) - tooltipWidth/2.5) + "," + y(1.9) + ")")
         .on("end", function() {
             d3.select("#tooltip-text").text(1998);
         });
@@ -167,7 +167,7 @@ function triangle1998 (){
     triangle.transition()
     .duration(500)
     .style("opacity", 1)
-    .attr("transform", "translate(" + (x(1997) + triangleWidth/2) + ",0)scale(0.5,1)");
+    .attr("transform", "translate(" + (x(1997) + triangleWidth/3) + ",0)scale(0.5,1)");
 
 
     tooltip.transition()
@@ -187,7 +187,7 @@ function triangle2002 (){
 
     triangle.transition()
     .duration(500)
-    .attr("transform", "translate(" + (x(2001) + triangleWidth/2) + ",0)scale(0.5,1)");
+    .attr("transform", "translate(" + (x(2001) + triangleWidth/3) + ",0)scale(0.5,1)");
 
     tooltip.transition()
     .duration(500)
@@ -206,7 +206,7 @@ function triangle2016 (){
 
     triangle.transition()
     .duration(500)
-    .attr("transform", "translate(" + (x(2015) + triangleWidth/2) + ",0)scale(0.5,1)");
+    .attr("transform", "translate(" + (x(2015) + triangleWidth/3) + ",0)scale(0.5,1)");
 
     tooltip.transition()
     .duration(500)
@@ -230,7 +230,7 @@ function triangle2017 (){
 
     triangle.transition()
     .duration(500)
-    .attr("transform", "translate(" + (x(2016) + triangleWidth/2) + ",0)scale(0.5,1)");
+    .attr("transform", "translate(" + (x(2016) + triangleWidth/3) + ",0)scale(0.5,1)");
 
 
     tooltip.transition()
