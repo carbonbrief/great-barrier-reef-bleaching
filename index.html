@@ -20,6 +20,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
         <script src="js/anime.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
         <script src="js/stickyfill.min.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19777583-2"></script>
@@ -2704,25 +2705,25 @@
                                     <stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
                                 </radialGradient>
                                 <polygon class="st213 firstRays" points="1163.5,599.5 599.5,34.5 34.5,598.5 34.5,608.5 287.5,606.5 34.5,618.5 34.5,622.5 357.5,611.5 
-                                35.5,633.5 36.5,642.5 197.5,633.5 37.5,652.5 39.5,672.5 298.5,640.5 40.5,682.5 42.5,691.5 394.5,634.5 43.5,701.5 45.5,711.5 
-                                304.5,660.5 47.5,720.5 53.5,744.5 432.5,644.5 56.5,754.5 61.5,772.5 275.5,709.5 68.5,791.5 71.5,800.5 487.5,643.5 75.5,810.5 
-                                77.5,813.5 205.5,769.5 85.5,832.5 87.5,837.5 420.5,685.5 91.5,845.5 96.5,854.5 311.5,754.5 105.5,872.5 112.5,885.5 375.5,732.5 
-                                117.5,893.5 122.5,901.5 445.5,697.5 128.5,909.5 136.5,922.5 330.5,796.5 153.5,946.5 159.5,953.5 399.5,762.5 166.5,961.5 
+                                35.5,633.5 36.5,642.5 138.5,638.5 37.5,652.5 39.5,675.5 298.5,640.5 40.5,680.5 42.5,691.5 394.5,634.5 43.5,701.5 45.5,713.5 
+                                304.5,660.5 46.5,718.5 52.5,742.5 432.5,644.5 56.5,756.5 61.5,772.5 275.5,709.5 68.5,791.5 71.5,800.5 487.5,643.5 75.5,810.5 
+                                77.5,813.5 205.5,769.5 85.5,832.5 87.5,837.5 420.5,685.5 91.5,845.5 96.5,854.5 311.5,754.5 105.5,872.5 113.5,886.5 375.5,732.5 
+                                116.5,891.5 122.5,901.5 445.5,697.5 128.5,909.5 136.5,922.5 330.5,796.5 153.5,946.5 160.5,955.5 399.5,762.5 163.5,958.5 
                                 169.5,965.5 431.5,744.5 176.5,972.5 182.5,979.5 364.5,817.5 189.5,987.5 202.5,1001.5 504.5,695.5 210.5,1007.5 216.5,1014.5 
-                                363.5,860.5 224.5,1021.5 235.5,1031.5 456.5,771.5 243.5,1036.5 247.5,1040.5 426.5,823.5 262.5,1052.5 270.5,1058.5 541.5,680.5 
-                                278.5,1064.5 290.5,1072.5 506.5,742.5 299.5,1077.5 320.5,1090.5 436.5,891.5 329.5,1095.5 333.5,1097.5 428.5,925.5 342.5,1101.5 
+                                289.5,942.5 224.5,1021.5 237.5,1032.5 456.5,771.5 240.5,1035.5 247.5,1040.5 426.5,823.5 262.5,1052.5 270.5,1058.5 541.5,680.5 
+                                278.5,1064.5 292.5,1073.5 506.5,742.5 296.5,1076.5 320.5,1090.5 436.5,891.5 329.5,1095.5 333.5,1097.5 428.5,925.5 342.5,1101.5 
                                 355.5,1108.5 514.5,779.5 364.5,1112.5 439.5,957.5 373.5,1116.5 390.5,1124.5 491.5,883.5 410.5,1130.5 433.5,1138.5 478.5,1005.5 
                                 443.5,1141.5 452.5,1144.5 530.5,860.5 461.5,1146.5 476.5,1150.5 528.5,926.5 486.5,1151.5 499.5,1154.5 530.5,1031.5 
-                                519.5,1158.5 539.5,1160.5 583.5,753.5 549.5,1162.5 568.5,1163.5 586.5,850.5 578.5,1163.5 598.5,1163.5 600.5,951.5 608.5,1163.5 
-                                618.5,1163.5 608.5,857.5 628.5,1162.5 653.5,1161.5 609.5,713.5 662.5,1160.5 677.5,1158.5 664.5,995.5 706.5,1153.5 715.5,1151.5 
-                                663.5,898.5 725.5,1149.5 735.5,1146.5 651.5,809.5 744.5,1144.5 758.5,1140.5 647.5,761.5 768.5,1137.5 773.5,1136.5 712.5,940.5 
-                                782.5,1132.5 800.5,1126.5 695.5,846.5 810.5,1122.5 832.5,1113.5 656.5,723.5 841.5,1109.5 850.5,1104.5 750.5,899.5 859.5,1099.5 
+                                519.5,1158.5 539.5,1160.5 583.5,753.5 549.5,1162.5 570.5,1163.5 586.5,850.5 575.5,1163.5 598.5,1163.5 600.5,951.5 608.5,1163.5 
+                                619.5,1163.5 608.5,857.5 626.5,1162.5 653.5,1161.5 609.5,713.5 662.5,1160.5 677.5,1158.5 664.5,995.5 706.5,1153.5 715.5,1151.5 
+                                663.5,898.5 725.5,1149.5 736.5,1146.5 651.5,809.5 742.5,1144.5 758.5,1140.5 647.5,761.5 768.5,1137.5 773.5,1136.5 712.5,940.5 
+                                782.5,1132.5 800.5,1126.5 695.5,846.5 810.5,1122.5 833.5,1112.5 656.5,723.5 839.5,1109.5 850.5,1104.5 750.5,899.5 859.5,1099.5 
                                 871.5,1093.5 710.5,797.5 890.5,1083.5 910.5,1070.5 813.5,917.5 918.5,1064.5 930.5,1055.5 803.5,878.5 938.5,1050.5 953.5,1038.5 
                                 716.5,742.5 961.5,1031.5 965.5,1028.5 859.5,899.5 973.5,1022.5 990.5,1005.5 695.5,697.5 997.5,998.5 1008.5,988.5 864.5,843.5 
-                                1020.5,972.5 1037.5,955.5 783.5,747.5 1043.5,946.5 1049.5,939.5 815.5,761.5 1054.5,930.5 1063.5,919.5 882.5,792.5 1069.5,910.5 
+                                1020.5,972.5 1037.5,955.5 783.5,747.5 1043.5,946.5 1050.5,937.5 815.5,761.5 1053.5,933.5 1063.5,919.5 882.5,792.5 1069.5,910.5 
                                 1077.5,898.5 932.5,800.5 1087.5,881.5 1096.5,864.5 696.5,649.5 1101.5,855.5 1108.5,842.5 793.5,691.5 1113.5,833.5 1122.5,810.5 
-                                828.5,690.5 1126.5,801.5 1128.5,797.5 957.5,729.5 1130.5,787.5 1140.5,760.5 929.5,693.5 1142.5,750.5 1146.5,736.5 800.5,647.5 
-                                1148.5,726.5 1151.5,711.5 686.5,616.5 1153.5,702.5 1156.5,682.5 946.5,646.5 1159.5,663.5 1161.5,643.5 984.5,627.5 1162.5,634.5 
+                                828.5,690.5 1126.5,801.5 1128.5,797.5 957.5,729.5 1130.5,787.5 1140.5,760.5 1043.5,726.5 1142.5,750.5 1146.5,736.5 800.5,647.5 
+                                1148.5,726.5 1152.5,709.5 686.5,616.5 1152.5,705.5 1156.5,682.5 946.5,646.5 1159.5,663.5 1161.5,643.5 984.5,627.5 1162.5,634.5 
                                 "/>
                         </svg>
                     </div>
@@ -2745,6 +2746,7 @@
             <div>
                 <p>Small-scale bleaching is a common sight on the reef, but 1998 marked the first year that saw widespread bleaching, Hughes says. That year, <a target="_blank" href="https://link.springer.com/article/10.1007/s00338-003-0353-y&amp;sa=D&amp;ust=1551790624676000">42%</a>&nbsp;of the reef turned white. The Great Barrier Reef is the world&rsquo;s largest living structure &ndash; made up of 3,000 individual reefs spread over an area the size of Italy or Japan. The first mass bleaching affected around 4,200 sq km of coral, according to Hughes.</p>
                 <p>At the time, a newspaper article <a target="_blank" href="http://www.globalcoral.org/the-warning-was-issued-20-years-ago-on-the-once-great-barrier-reef/&amp;sa=D&amp;ust=1551790624677000">published</a>&nbsp;in the Townsville Bulletin warned that &ldquo;coral bleaching is killing the world&rsquo;s coral reef ecosystems&rdquo; and that &ldquo;the future for even the Great Barrier Reef was bleak&rdquo;. Speaking to the paper, marine ecologist <a target="_blank" href="https://www.reefcheckaustralia.org/dr_terry_done&amp;sa=D&amp;ust=1551790624677000">Dr Terry Done</a>&nbsp;said: &ldquo;If the projections of global climate change do come about it&rsquo;s likely we will see more years like this in the future.&rdquo;</p>
+                <img class="photo" src="img/cutting.jpg"/>
                 <p>The second mass bleaching occurred four years later, in 2002. This time, <a target="_blank" href="https://link.springer.com/article/10.1007/s00338-003-0353-y&amp;sa=D&amp;ust=1551790624678000">54%</a>&nbsp;of the reef was affected.</p><p>&ldquo;We had a very long gap &ndash; a 14-year gap &ndash; and we were just simply lucky,&rdquo; Hughes says. The third mass bleaching episode came in 2016, this time causing <a target="_blank" href="http://www.coralcoe.org.au/media-releases/only-7-of-the-great-barrier-reef-has-avoided-coral-bleaching&amp;sa=D&amp;ust=1551790624679000">93%</a>&nbsp;of the reef to bleach. Most of the damage was concentrated in the northern section of the reef, where sea temperatures were particularly high, according to aerial surveys undertaken by Hughes. Here, 81% of the coral bleached severely &ndash; while only 1% escaped bleaching altogether.</p>
                 <p>&ldquo;Then, unfortunately, we were very unlucky because we saw widespread bleaching for the fourth time just one year later,&rdquo; he says. Research recently published by Hughes shows that the 2017 bleaching event affected <a target="_blank" href="https://www.nature.com/articles/s41558-018-0351-2&amp;sa=D&amp;ust=1551790624680000">83%</a>&nbsp;of coral &ndash;&nbsp;a small decrease on the area affected in 2016. This is not necessarily a good thing, however, Hughes says. &ldquo;In the north, the reason it didn&rsquo;t bleach so much in year two is because all the heat-susceptible [coral] had [already] died.&rdquo;</p>
             </div>
@@ -2941,7 +2943,7 @@
                 <p>The rise in mass coral bleaching is a consequence of rapidly rising temperatures,&nbsp;Hughes explains. (Carbon Brief <a target="_blank" href="https://www.carbonbrief.org/mapped-how-every-part-of-the-world-has-warmed-and-could-continue-to-warm&amp;sa=D&amp;ust=1551790624684000">analysis</a>&nbsp;shows that temperatures above the Great Barrier Reef have risen by 0.6-0.9C since the industrial era began.) Hughes says:</p>
                 <p class="long-quote">&ldquo;What we&rsquo;ve seen here on the Barrier Reef mirrors the global trend. We&rsquo;ve gone from a period before the 1980s where mass bleaching simply didn&rsquo;t happen to an intermediate phase that lasted a couple of decades, where El Ni&ntilde;os triggered bleaching.&rdquo;</p>
                 <div id="nino-wrapper">
-                    <iframe id="ai2html" frameborder="0" src="javascript:void(0);" scrolling="no"></iframe>
+                    <iframe class="lozad" id="ai2html" frameborder="0" src="javascript:void(0);" scrolling="no"></iframe>
                 </div>
                 <div id="download-wrapper">
                     <div id="nino-logo" class="nino-info"><img src="img/CB-logo.svg" /></div>

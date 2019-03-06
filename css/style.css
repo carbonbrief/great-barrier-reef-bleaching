@@ -132,6 +132,16 @@ body {
     flex: 1 0 0;
 }
 
+.photo {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 #text-container {
     margin: 40px;
 }
