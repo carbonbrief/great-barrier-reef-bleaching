@@ -135,11 +135,19 @@ body {
 .photo {
     max-width: 100%;
     height: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+figcaption {
+    font-family: "PT Sans", sans-serif;
+}
+
+figure {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #text-container {
