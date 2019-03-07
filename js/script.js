@@ -22,21 +22,51 @@ function setHeights () {
 
     // check whether height or width will be the limiting factor for the scale of the bleaching animation
     // reset before updating variables
-    if (screenHeight < (screenWidth * 0.6363)) {
 
-        $bleach.css("height", (screenHeight - 80));
-        bleachHeight = $bleach.height();
+    if (screenWidth > 735) {
 
-        $bleach.css("width", (bleachHeight * 1.5714));
-        bleachWidth = $bleach.width();
+        if (screenHeight < (screenWidth * 0.6363)) {
+
+            $bleach.css("height", (screenHeight - 80));
+            bleachHeight = $bleach.height();
+    
+            $bleach.css("width", (bleachHeight * 1.5714));
+            bleachWidth = $bleach.width();
+            
+        } else {
+    
+            $bleach.css("width", (screenWidth - 80));
+            bleachWidth = $bleach.width();
         
+            $bleach.css("height", (bleachWidth * 0.6363));
+            bleachHeight = $bleach.height();
+    
+        }
+
     } else {
 
-        $bleach.css("width", (screenWidth - 80));
-        bleachWidth = $bleach.width();
+        if (screenWidth > screenHeight) {
+
+            $bleach.css("width", (screenWidth - 20));
+            bleachWidth = $bleach.width();
+
+            $bleach.css("height", (bleachWidth * 0.6363));
+            bleachHeight = $bleach.height();
+
+
+
+        } else {
+
+            $bleach.css("height", (screenHeight - 80));
+            bleachHeight = $bleach.height();
     
-        $bleach.css("height", (bleachWidth * 0.6363));
-        bleachHeight = $bleach.height();
+            $bleach.css("width", (bleachHeight * 1.5714));
+            bleachWidth = $bleach.width();
+
+            //$(".bleaching-wrapper").css("width", screenWidth);
+            // $bleach.css("left", (-(bleachwidth/2)));
+
+        }
 
     }
 

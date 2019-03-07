@@ -96,7 +96,11 @@ a:hover {
 }
 
 body {
-    margin: 0;
+    width: 100%;
+    /* height: 100%; */
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 .central {
@@ -454,9 +458,9 @@ ul {
 .bleaching {
     position: sticky;
     position: -webkit-sticky;
+    top: 0;
     /* to stop scroll animation flickering in Safari */
     -webkit-transform-style: preserve-3d;
-    top: 0;
     width: calc(100% - 40px);
     height: auto;
     margin-right: auto;
