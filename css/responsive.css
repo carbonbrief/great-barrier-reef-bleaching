@@ -1,7 +1,8 @@
 @media all and (max-width: 1690px) { 
 
 }
-@media all and (max-width: 1280px) { 
+@media all and (max-width: 1280px) {
+
 
     .logo {
         width: 95px;
@@ -9,11 +10,34 @@
     }
 
     #intro-background {
-        height: 500px;
+        height: 450px;
     }
 
     #section-1 {
         height: 500px;
+    }
+
+}
+
+@media all and (max-width: 1080px) {
+
+    #scroll-graphic .small {
+        position: absolute;
+    }
+
+    #text-container {
+        margin: 30px;
+        right: 0px;
+        max-width: 500px;
+    }
+
+    .text-section p {
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        font-size: 15px;
+        line-height: 28px;
     }
 
 }
@@ -92,19 +116,12 @@
 
 @media all and (max-width: 736px) {
 
-    #scroll-graphic .small {
-        position: absolute;
-    }
-
     #text-container {
         margin: 15px;
     }
 
     .text-section p {
         padding: 0.6em;
-        background-color: rgba(255, 255, 255, 0.9);
-        margin-block-start: 0em;
-        margin-block-end: 0em;
         font-size: 14px;
         line-height: 25px;
     }
