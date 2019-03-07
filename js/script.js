@@ -7,6 +7,9 @@ const $map = $('#map');
 const observer = lozad();
 observer.observe();
 
+// scroll to top on window reload
+$(document).scrollTop(0);
+
 // SET ELEMENT HEIGHTS
 let screenHeight = $(window).height();
 let screenWidth = $(window).width();
@@ -52,8 +55,6 @@ function setHeights () {
 
             $bleach.css("height", (bleachWidth * 0.6363));
             bleachHeight = $bleach.height();
-
-
 
         } else {
 
@@ -101,9 +102,6 @@ setHeights();
 
 $(document).ready(function() {
 
-    // scroll to top on window reload
-    $(document).scrollTop(0);
-
     // set heights again once the DOM is loaded so image doesn't cause incorrect positioning of chart 
     setHeights();
 
@@ -125,16 +123,16 @@ $(document).ready(function() {
                     window[graphFunction]();
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
-                        // console.log("Retina " + sectionName);
+                        console.log("Retina");
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
-                        // console.log("Desktop " + sectionName);
+                        console.log("Desktop");
                     } else if (screenHeight < 701 && screenHeight > 500) {
                         map.flyTo(locationsLaptop[sectionName]);
-                        // console.log("Laptop " + sectionName);
+                        console.log("laptop");
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
-                        // console.log("Mobile " + sectionName);
+                        console.log("mobile");
                     };
                     updateMap(sectionName);
                 } else {
@@ -154,12 +152,16 @@ $(document).ready(function() {
                     window[graphFunction]();
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
+                        console.log("Retina");
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
+                        console.log("Desktop");
                     } else if (screenHeight < 701 && screenHeight > 500) {
                         map.flyTo(locationsLaptop[sectionName]);
+                        console.log("laptop");
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
+                        console.log("mobile");
                     };
                     updateMap(sectionName);
                 }
