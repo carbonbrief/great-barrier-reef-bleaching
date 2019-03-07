@@ -65,7 +65,7 @@ p {
 .long-quote {
     margin-left: 2em;
     padding-left: 1em;
-    border-left: 3px solid #FF6F61;
+    border-left: 3px solid #FA7268;
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     line-height: 32px;
@@ -85,14 +85,14 @@ p {
 a {
     color: #333333;
     /* text-decoration: underline;
-    text-decoration-color: #FF6F61; */
+    text-decoration-color: #FA7268; */
     /* second option */
     text-decoration: none;
-    border-bottom: 1.2px solid #FF6F61;
+    border-bottom: 1.2px solid #FA7268;
 }
 
 a:hover {
-    color: #FF6F61;
+    color: #FA7268;
 }
 
 body {
@@ -189,12 +189,12 @@ figure {
 .year-highlight {
     margin: 10px;
     padding: 5px;
-    color: #FF6F61;
+    color: #FA7268;
     background-color: #FFFFFF;
-    border: 2px solid #FF6F61;
-    -moz-box-shadow:    4px 4px 0px 0px #FF6F61;
-    -webkit-box-shadow: 4px 4px 0px 0px #FF6F61;
-    box-shadow:         4px 4px 0px 0px #FF6F61;
+    border: 2px solid #FA7268;
+    -moz-box-shadow:    4px 4px 0px 0px #FA7268;
+    -webkit-box-shadow: 4px 4px 0px 0px #FA7268;
+    box-shadow:         4px 4px 0px 0px #FA7268;
 }
 
 .padding-section {
@@ -237,8 +237,8 @@ figure {
     /*  adjust dynamicaly via code depending on the height of the containers above */
     top: 500px;
     height: 3320px;
-    width: 830px;
-    margin-left: calc((100% - 830px)/2);
+    width: 340px;
+    margin-left: calc((100% - 340px)/2);
 }
 
 #chart-wrapper {
@@ -252,8 +252,18 @@ figure {
 .text-key {
     padding: 2px;
     border-radius: 4px;
-    background-color: #ff6e61;
+    background-color: #FA7268;
     color: #FFFFFF;
+    font-family: "PT Sans", sans-serif;
+}
+
+.text-key a {
+    border-bottom: none;
+    color: #FFFFFF;
+}
+
+.text-key:hover {
+    background-color: rgba(250, 114, 104, 0.6);
 }
 
 .axis text {
@@ -270,26 +280,26 @@ figure {
 }
 
 #triangle {
-    stroke: #FF6F61;
+    stroke: #FA7268;
     stroke-width: 1;
-    fill: #FF6F61;
+    fill: #FA7268;
     opacity: 0;
 }
 
 #rect-1 {
-    stroke: #FF6F61;
-    fill: #FF6F61;
+    stroke: #FA7268;
+    fill: #FA7268;
 }
 
 #rect-2 {
     fill: white;
-    stroke: #FF6F61;
+    stroke: #FA7268;
 }
 
 #tooltip text {
     font-family: "PT Sans", sans-serif;
     font-size: 13px;
-    fill: #FF6F61;
+    fill: #FA7268;
 }
 
 .bar {
@@ -313,7 +323,7 @@ figure {
 }
 
 .logo:hover {
-    fill: #FF6F61;
+    fill: #FA7268;
     opacity: 1;
 }
 

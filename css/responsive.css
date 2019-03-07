@@ -1,6 +1,19 @@
-@media all and (max-width: 1690px) { 
+@media all and (min-width: 1500px) { 
+
+    .large {
+        -ms-flex: 3 0 0;
+        -webkit-flex: 3 0 0;
+        flex: 3 0 0;
+    }
+    
+    .small {
+        -ms-flex: 1 0 0;
+        -webkit-flex: 1 0 0;
+        flex: 1 0 0;
+    }
 
 }
+
 @media all and (max-width: 1280px) {
 
 
