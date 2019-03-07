@@ -156,6 +156,7 @@ figure {
 
 #text-container {
     margin: 40px;
+    z-index: 6;
 }
 
 #text-container h2 {
@@ -164,6 +165,7 @@ figure {
 
 #map-container {
     height: 3200px;
+    z-index: 4;
 }
 
 #map {
@@ -182,8 +184,6 @@ figure {
 .text-section p {
     font-size: 16px;
     line-height: 28px;
-    /* margin-block-start: 0em;
-    margin-block-end: 0em; */
 }
 
 .year-highlight {
@@ -233,6 +233,7 @@ figure {
 }
 
 #chart-container {
+    z-index: 5;
     position: absolute;
     /*  adjust dynamicaly via code depending on the height of the containers above */
     top: 500px;

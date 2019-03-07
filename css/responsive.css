@@ -39,9 +39,9 @@
     }
 
     #text-container {
-        margin: 30px;
+        margin: 20px;
         right: 0px;
-        max-width: 500px;
+        max-width: 450px;
     }
 
     .text-section p {
@@ -123,6 +123,14 @@
 
     #ai2html {
         margin-top: 5px;
+    }
+
+    #chart-container {
+        visibility: hidden;
+    }
+
+    #chart-placeholder {
+        display: none;
     }
 
 }
@@ -225,20 +233,6 @@
     #nino-wrapper {
         width: 340px;
         height: 870px;
-    }
-
-}
-
-/* extra breakpoint for timeline */
-
-@media all and (max-width: 580px) {
-
-    #chart-container {
-        visibility: hidden;
-    }
-
-    #chart-placeholder {
-        display: none;
     }
 
 }
