@@ -47,7 +47,7 @@ function setHeights () {
 
         if (screenWidth > screenHeight) {
 
-            $bleach.css("width", (screenWidth - 20));
+            $bleach.css("width", (screenWidth - 80));
             bleachWidth = $bleach.width();
 
             $bleach.css("height", (bleachWidth * 0.6363));
@@ -57,14 +57,16 @@ function setHeights () {
 
         } else {
 
+            // reconfigure so there's not loads of white space on portait screens
+
             $bleach.css("height", (screenHeight - 80));
             bleachHeight = $bleach.height();
     
             $bleach.css("width", (bleachHeight * 1.5714));
             bleachWidth = $bleach.width();
 
-            //$(".bleaching-wrapper").css("width", screenWidth);
-            // $bleach.css("left", (-(bleachwidth/2)));
+            // centre animation
+            $(".bleaching-wrapper").css("transform", "translateX(-20%)");
 
         }
 
