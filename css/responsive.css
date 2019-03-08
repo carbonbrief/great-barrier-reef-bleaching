@@ -147,11 +147,14 @@
         line-height: 25px;
     }
 
-
     p {
         font-weight: 300;
         font-size: 15px;
         line-height: 27px;
+    }
+
+    figcaption {
+        font-size: 13px;
     }
 
     .long-quote {
@@ -225,6 +228,10 @@
         height: 32.5px;
     }
 
+    .youtube {
+        height: 380px;
+    }
+
 }
 
 /* el nino */
@@ -259,6 +266,10 @@
 
     h1 {
         font-size: 24px;
+    }
+
+    .youtube {
+        height: 300px;
     }
 
 }
