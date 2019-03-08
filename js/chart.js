@@ -5,7 +5,7 @@ var chart = d3.select("#chart"),
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.0),
     y = d3.scaleLinear().rangeRound([height, 0]);
-    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#E8F5FD", "#FF6F61"]);
+    color = d3.scaleOrdinal().domain(["n", "b"]).range(["#E8F5FD", "#FA7268"]);
 
 var svg = chart.append("svg")
     .attr("width", width + margin.left + margin.right)

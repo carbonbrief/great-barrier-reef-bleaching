@@ -115,6 +115,11 @@ body {
     width: 100%;
 }
 
+.figure-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .row {
     /* order important so don't override new syntax with old */
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
