@@ -427,12 +427,27 @@ ul {
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    width: 830px;
+    max-width: 100%;
+}
+
+.info p {
+    font-family: "PT Sans", sans-serif;
+    font-size: 17px;
+    line-height: 28px;
+}
+
+.info i {
+    color: #FA7268;
+    font-size: 24px;
 }
 
 .large-info {
-    -ms-flex: 4 0 0;
-    -webkit-flex: 4 0 0;
-    flex: 4 0 0;
+    -ms-flex: 5 0 0;
+    -webkit-flex: 5 0 0;
+    flex: 5 0 0;
 }
 
 .small-info {
@@ -441,9 +456,9 @@ ul {
     flex: 1 0 0;
 }
 
-.small-info div {
-    margin-top: auto;
-    margin-bottom: auto;
+.small-info p {
+    vertical-align: middle;
+    text-align: center;
 }
 
 /* el nino graphic */
