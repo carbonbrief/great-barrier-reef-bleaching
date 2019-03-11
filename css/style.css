@@ -152,6 +152,8 @@ body {
 
 figcaption {
     font-family: "PT Sans", sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 figure {
