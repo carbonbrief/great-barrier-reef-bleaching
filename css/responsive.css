@@ -32,7 +32,7 @@
 
 }
 
-@media all and (max-width: 1080px) {
+@media all and (max-width: 980px) {
 
     #scroll-graphic .small {
         position: absolute;
@@ -53,9 +53,13 @@
         line-height: 28px;
     }
 
-}
+    #chart-container {
+        visibility: hidden;
+    }
 
-@media all and (max-width: 980px) {
+    #chart-placeholder {
+        display: none;
+    }
 
     .logo {
         height: 25px;
@@ -123,14 +127,6 @@
 
     #ai2html {
         margin-top: 5px;
-    }
-
-    #chart-container {
-        visibility: hidden;
-    }
-
-    #chart-placeholder {
-        display: none;
     }
 
 }
