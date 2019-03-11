@@ -270,7 +270,7 @@ figure {
     color: #FFFFFF;
 }
 
-.text-key:hover {
+p .text-key:hover {
     background-color: rgba(250, 114, 104, 0.6);
 }
 
