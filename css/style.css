@@ -461,6 +461,12 @@ ul {
     text-align: center;
 }
 
+.acidification {
+    width: 1920px;
+    max-width: 100%;
+    height: auto;
+}
+
 /* el nino graphic */
 
 #nino-wrapper {
