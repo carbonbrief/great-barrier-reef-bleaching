@@ -259,7 +259,7 @@ figure {
 
 .text-key {
     padding: 2px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     background-color: #FA7268;
     color: #FFFFFF;
     font-family: "PT Sans", sans-serif;
@@ -417,6 +417,33 @@ ul {
 
 #section-1 {
     height: 550px;
+}
+
+.info {
+    border-top: 1px solid #C0C9C9;
+    border-bottom: 1px solid #C0C9C9;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.large-info {
+    -ms-flex: 4 0 0;
+    -webkit-flex: 4 0 0;
+    flex: 4 0 0;
+}
+
+.small-info {
+    -ms-flex: 1 0 0;
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+}
+
+.small-info div {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* el nino graphic */
