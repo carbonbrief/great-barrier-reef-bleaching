@@ -201,21 +201,21 @@ var locationsMobile = {
     },
     '1998': {
         bearing: 0,
-        center: [148, -18.1],
+        center: [148, -18.2],
         zoom: 3.9,
         pitch: 0,
         speed: 0.5
     },
     '2002': {
         bearing: 0,
-        center: [148, -18.1],
+        center: [148, -18.2],
         zoom: 3.9,
         pitch: 0,
         speed: 0.5
     },
     '2016': {
         bearing: 0,
-        center: [148, -18.1],
+        center: [148, -18.2],
         zoom: 3.9,
         pitch: 0,
         speed: 0.5
@@ -229,7 +229,7 @@ var locationsMobile = {
     },
     '2017': {
         bearing: 0,
-        center: [148, -18.1],
+        center: [148, -18.2],
         zoom: 3.9,
         pitch: 0,
         speed: 0.8
@@ -253,22 +253,22 @@ var locationsLaptop = {
     },
     '1998': {
         bearing: 0,
-        center: [148, -18.1],
-        zoom: 4.6,
+        center: [148, -18],
+        zoom: 4.5,
         pitch: 0,
         speed: 0.5
     },
     '2002': {
         bearing: 0,
-        center: [148, -18.1],
+        center: [148, -18],
         zoom: 4.6,
         pitch: 0,
         speed: 0.5
     },
     '2016': {
         bearing: 0,
-        center: [148, -18.1],
-        zoom: 4.6,
+        center: [148, -18],
+        zoom: 4.5,
         pitch: 0,
         speed: 0.5
     },
@@ -281,8 +281,8 @@ var locationsLaptop = {
     },
     '2017': {
         bearing: 0,
-        center: [148, -18.1],
-        zoom: 4.6,
+        center: [148, -18],
+        zoom: 4.5,
         pitch: 0,
         speed: 0.8
     }

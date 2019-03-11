@@ -30,6 +30,15 @@
         height: 500px;
     }
 
+    h2 {
+        font-size: 26px;
+    }
+
+    .text-section p {
+        font-size: 15.5px;
+        line-height: 27px;
+    }
+
 }
 
 @media all and (max-width: 980px) {
@@ -50,7 +59,7 @@
         margin-block-start: 0em;
         margin-block-end: 0em;
         font-size: 15px;
-        line-height: 28px;
+        line-height: 26px;
     }
 
     .info p {
@@ -118,10 +127,6 @@
         margin: 15px;
     }
 
-    /* figcaption {
-        margin: 15px;
-    } */
-
 }
 
 /* extra breakpoint for text */
@@ -169,10 +174,6 @@
     figcaption {
         font-size: 13px;
     }
-
-    /* figcaption {
-        margin: 5px;
-    } */
 
     .long-quote {
         margin-left: 1.2em;
@@ -265,7 +266,7 @@
 
     .text-section p {
         /* padding: 8px; */
-        font-size: 13px;
+        font-size: 12.5px;
         line-height: 19px;
     }
 
@@ -283,6 +284,10 @@
 
     h1 {
         font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
     }
 
     .youtube {
