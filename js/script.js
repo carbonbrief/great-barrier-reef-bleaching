@@ -172,6 +172,21 @@ $(document).ready(function() {
 
     });
 
+    // autoplay ocean acidification animation
+
+    // let $Acid = $("#acidification");
+
+    // var acidTop = new Waypoint({
+    //     element: $Acid,
+    //     handler: function(direction) {
+    //         if (direction == "down") {
+    //             console.log("waypoint down");
+    //         } else {
+    //             console.log("waypoint up");
+    //         }
+    //     }
+    // });
+
 });
 
 // ALGAE ANIMATION
