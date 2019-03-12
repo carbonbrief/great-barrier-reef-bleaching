@@ -621,7 +621,7 @@ $(window).on('scroll', function () {
 
     const lightness = 80;
 
-    let calc3 = (scrollTop - picFromTop + 600) / 900;
+    let calc3 = (((scrollTop - picFromTop - 250) + 1100) / 1100);
 
     // ensure calc3 remains within range
     calc3 = Math.min(Math.max(calc3, 1), 1.25);
