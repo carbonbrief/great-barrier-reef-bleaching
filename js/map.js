@@ -186,90 +186,68 @@ function updateMap (sectionName) {
 
 var locationsMobile = {
     'Intro1': {
-        bearing: 0,
         center: [145.7, -17.8],
         zoom: 3.1,
-        pitch: 0,
         speed: 0.5
     },
     'Intro2': {
-        bearing: 0,
         center: [148, -17.8],
         zoom: 3.6,
-        pitch: 0,
         speed: 0.5
     },
     '1998': {
-        bearing: 0,
         center: [148, -18.2],
         zoom: 3.9,
         pitch: 0,
         speed: 0.5
     },
     '2002': {
-        bearing: 0,
         center: [148, -18.2],
         zoom: 3.9,
-        pitch: 0,
         speed: 0.5
     },
     '2016': {
-        bearing: 0,
         center: [148, -18.2],
         zoom: 3.9,
-        pitch: 0,
         speed: 0.5
     },
     '2016second': {
-        bearing: 0,
         center: [144, -14],
         zoom: 5,
         pitch: 0.2,
         speed: 0.8
     },
     '2017': {
-        bearing: 0,
         center: [148, -18.2],
         zoom: 3.9,
-        pitch: 0,
         speed: 0.8
     }
 }
 
 var locationsLaptop = {
     'Intro1': {
-        bearing: 0,
         center: [145.7, -17.8],
         zoom: 3.4,
-        pitch: 0,
         speed: 0.5
     },
     'Intro2': {
-        bearing: 0,
         center: [148, -17.8],
         zoom: 3.9,
-        pitch: 0,
         speed: 0.5
     },
     '1998': {
-        bearing: 0,
         center: [148, -18],
         zoom: 4.5,
-        pitch: 0,
         speed: 0.5
     },
     '2002': {
-        bearing: 0,
         center: [148, -18],
         zoom: 4.6,
-        pitch: 0,
         speed: 0.5
     },
     '2016': {
-        bearing: 0,
         center: [148, -18],
         zoom: 4.5,
-        pitch: 0,
         speed: 0.5
     },
     '2016second': {
@@ -280,105 +258,82 @@ var locationsLaptop = {
         speed: 0.8
     },
     '2017': {
-        bearing: 0,
         center: [148, -18],
         zoom: 4.5,
-        pitch: 0,
         speed: 0.8
     }
 }
 
 var locationsDesktop = {
     'Intro1': {
-        bearing: 0,
         center: [145.7, -17.8],
         zoom: 3.7,
-        pitch: 0,
         speed: 0.5
     },
     'Intro2': {
-        bearing: 0,
         center: [148, -17.8],
         zoom: 4.2,
-        pitch: 0,
         speed: 0.5
     },
     '1998': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 4.7,
-        pitch: 0,
         speed: 0.5
     },
     '2002': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 4.7,
-        pitch: 0,
         speed: 0.5
     },
     '2016': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 4.7,
-        pitch: 0,
         speed: 0.5
     },
     '2016second': {
-        bearing: 0,
         center: [144, -14],
         zoom: 6,
-        pitch: 0.2,
         speed: 0.8
     },
     '2017': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 4.7,
-        pitch: 0,
         speed: 0.8
     }
 }
 
 var locationsRetina = {
     'Intro1': {
-        bearing: 0,
         center: [145.7, -17.8],
         zoom: 4,
         speed: 0.5
     },
     'Intro2': {
-        bearing: 0,
         center: [148, -17.9],
         zoom: 4.5,
         speed: 0.5
     },
     '1998': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 5,
         speed: 0.5
     },
     '2002': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 5,
         speed: 0.5
     },
     '2016': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 5,
         speed: 0.5
     },
     '2016second': {
-        bearing: 0,
         center: [144, -14],
         zoom: 6,
         speed: 0.8
     },
     '2017': {
-        bearing: 0,
         center: [148, -18.1],
         zoom: 5,
         speed: 0.8
