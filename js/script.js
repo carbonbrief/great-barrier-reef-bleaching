@@ -78,7 +78,7 @@ function setHeights () {
     $bleach.css("top", bleachMargin);
     $bleach.css("margin-bottom", bleachMargin);
 
-    $(".bleaching-wrapper").css("height", screenHeight + 700);
+    $(".bleaching-wrapper").css("height", screenHeight + 800);
     $(".bleaching-wrapper").css("margin-left", "auto");
     $(".bleaching-wrapper").css("margin-right", "auto");
 
@@ -665,12 +665,14 @@ $(window).on('scroll', function () {
 
     // TRIGGER FISH ANIMATION
 
-    let calc5 = Math.min(Math.max(calc4, 0), 800);
+    let calc5 = scrollTop - (picFromTop);
 
-    fish1.seek(fish1.duration * (calc4 / 600));
-    fish2.seek(fish2.duration * (calc4 / 600));
-    fish3.seek(fish3.duration * (calc4 / 600));
-    rays.seek(rays.duration * (calc4 / 600));
+    calc5 = Math.min(Math.max(calc5, 0), 800);
+
+    fish1.seek(fish1.duration * (calc5 / 800));
+    fish2.seek(fish2.duration * (calc5 / 800));
+    fish3.seek(fish3.duration * (calc5 / 800));
+    rays.seek(rays.duration * (calc5 / 800));
 
     // PAUSE VIDEO 
     // when not in view
