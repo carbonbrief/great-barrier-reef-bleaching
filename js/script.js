@@ -174,18 +174,31 @@ $(document).ready(function() {
 
     // autoplay ocean acidification animation
 
-    // let $Acid = $("#acidification");
+    let $Acid = document.getElementById("acidification");
 
-    // var acidTop = new Waypoint({
-    //     element: $Acid,
-    //     handler: function(direction) {
-    //         if (direction == "down") {
-    //             console.log("waypoint down");
-    //         } else {
-    //             console.log("waypoint up");
-    //         }
-    //     }
-    // });
+    var acidBottom = new Waypoint({
+        element: $Acid,
+        handler: function(direction) {
+            if (direction == "down") {
+                $Acid.play();
+            } else {
+                $Acid.pause();
+            }
+        },
+        offset: "60%"
+    });
+
+    var acidTop = new Waypoint({
+        element: $Acid,
+        handler: function(direction) {
+            if (direction == "up") {
+                $Acid.play();
+            } else {
+                $Acid.pause();
+            }
+        },
+        offset: "-10%"
+    });
 
 });
 
