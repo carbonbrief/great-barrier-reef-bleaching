@@ -198,7 +198,6 @@ var locationsMobile = {
     '1998': {
         center: [148, -18.2],
         zoom: 3.9,
-        pitch: 0,
         speed: 0.5
     },
     '2002': {
@@ -214,7 +213,6 @@ var locationsMobile = {
     '2016second': {
         center: [144, -14],
         zoom: 5,
-        pitch: 0.2,
         speed: 0.8
     },
     '2017': {
@@ -251,10 +249,8 @@ var locationsLaptop = {
         speed: 0.5
     },
     '2016second': {
-        bearing: 0,
         center: [144, -14],
         zoom: 6,
-        pitch: 0.2,
         speed: 0.8
     },
     '2017': {
