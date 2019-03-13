@@ -144,7 +144,8 @@
 @media screen and (min-width: 450px) and (max-width: 800px) {
     #nino-wrapper {
         width: 470px;
-        height: 1230px;
+        height: 1240px;
+        margin-bottom: 10px;
     }
 
     #ai2html {
@@ -258,6 +259,7 @@
     #nino-wrapper {
         width: 340px;
         height: 870px;
+        margin-bottom: 6px;
     }
 
 }

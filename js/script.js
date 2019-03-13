@@ -2,6 +2,160 @@ const $textSection = $('.text-section');
 const $paddingSection = $('.padding-section');
 const $map = $('#map');
 
+// locations to fly to
+
+var locationsMobile = {
+    'Intro1': {
+        center: [145.7, -17.8],
+        zoom: 3.1,
+        speed: 0.5
+    },
+    'Intro2': {
+        center: [148, -17.8],
+        zoom: 3.6,
+        speed: 0.5
+    },
+    '1998': {
+        center: [148, -18.2],
+        zoom: 3.9,
+        speed: 0.5
+    },
+    '2002': {
+        center: [148, -18.2],
+        zoom: 3.91,
+        speed: 0.5
+    },
+    '2016': {
+        center: [148, -18.2],
+        zoom: 3.92,
+        speed: 0.5
+    },
+    '2016second': {
+        center: [144, -14],
+        zoom: 5,
+        speed: 0.8
+    },
+    '2017': {
+        center: [148, -18.2],
+        zoom: 3.9,
+        speed: 0.8
+    }
+}
+
+var locationsLaptop = {
+    'Intro1': {
+        center: [145.7, -17.8],
+        zoom: 3.4,
+        speed: 0.5
+    },
+    'Intro2': {
+        center: [148, -17.8],
+        zoom: 3.9,
+        speed: 0.5
+    },
+    '1998': {
+        center: [148, -18],
+        zoom: 4.5,
+        speed: 0.5
+    },
+    '2002': {
+        center: [148, -18],
+        zoom: 4.51,
+        speed: 0.5
+    },
+    '2016': {
+        center: [148, -18],
+        zoom: 4.52,
+        speed: 0.5
+    },
+    '2016second': {
+        center: [144, -14],
+        zoom: 6,
+        speed: 0.8
+    },
+    '2017': {
+        center: [148, -18],
+        zoom: 4.5,
+        speed: 0.8
+    }
+}
+
+var locationsDesktop = {
+    'Intro1': {
+        center: [145.7, -17.8],
+        zoom: 3.7,
+        speed: 0.5
+    },
+    'Intro2': {
+        center: [148, -17.8],
+        zoom: 4.2,
+        speed: 0.5
+    },
+    '1998': {
+        center: [148, -18.1],
+        zoom: 4.7,
+        speed: 0.5
+    },
+    '2002': {
+        center: [148, -18.1],
+        zoom: 4.71,
+        speed: 0.5
+    },
+    '2016': {
+        center: [148, -18.1],
+        zoom: 4.72,
+        speed: 0.5
+    },
+    '2016second': {
+        center: [144, -14],
+        zoom: 6,
+        speed: 0.8
+    },
+    '2017': {
+        center: [148, -18.1],
+        zoom: 4.7,
+        speed: 0.8
+    }
+}
+
+var locationsRetina = {
+    'Intro1': {
+        center: [145.7, -17.8],
+        zoom: 4,
+        speed: 0.5
+    },
+    'Intro2': {
+        center: [148, -17.9],
+        zoom: 4.5,
+        speed: 0.5
+    },
+    '1998': {
+        center: [148, -18.1],
+        zoom: 5,
+        speed: 0.5
+    },
+    '2002': {
+        center: [148, -18.1],
+        zoom: 5.01,
+        speed: 0.5
+    },
+    '2016': {
+        center: [148, -18.1],
+        zoom: 5.02,
+        speed: 0.5
+    },
+    '2016second': {
+        center: [144, -14],
+        zoom: 6,
+        speed: 0.8
+    },
+    '2017': {
+        center: [148, -18.1],
+        zoom: 5,
+        speed: 0.8
+    }
+}
+
 // LAZY LOAD MEDIA
 // with selector '.lozad'
 const observer = lozad();
@@ -136,9 +290,10 @@ $(document).ready(function() {
                         console.log(locationsDesktop[sectionName]);
                     } else if (screenHeight < 701 && screenHeight > 550) {
                         map.flyTo(locationsLaptop[sectionName]);
-                        console.log(locationsDesktop[sectionName]);
+                        console.log(locationsLaptop[sectionName]);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
+                        console.log(locationsMobile[sectionName]);
                     };
                     updateMap(sectionName);
                 } else {
@@ -158,12 +313,16 @@ $(document).ready(function() {
                     window[graphFunction]();
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
+                        console.log(locationsRetina[sectionName]);
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
+                        console.log(locationsDesktop[sectionName]);
                     } else if (screenHeight < 701 && screenHeight > 550) {
                         map.flyTo(locationsLaptop[sectionName]);
+                        console.log(locationsLaptop[sectionName]);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
+                        console.log(locationsMobile[sectionName]);
                     };
                     updateMap(sectionName);
                 }
