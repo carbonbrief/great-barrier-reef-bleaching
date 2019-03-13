@@ -5,15 +5,15 @@ function changeIframeSrc (screenWidth) {
 
     if (screenWidth > 800) { 
 
-        iframe.attr('src',path + "desktop.html");   
+        iframe.attr('data-src',path + "desktop.html");   
     
     } else if ((screenWidth > 450) && (screenWidth < 800)) {
     
-        iframe.attr('src',path + "mobile.html");   
+        iframe.attr('data-src',path + "mobile.html");   
 
     } else {
     
-        iframe.attr('src',path + "mobile-small.html");   
+        iframe.attr('data-src',path + "mobile-small.html");   
 
     }
 }

@@ -22,12 +22,12 @@ var locationsMobile = {
     },
     '2002': {
         center: [148, -18.2],
-        zoom: 3.91,
+        zoom: 3.9,
         speed: 0.5
     },
     '2016': {
         center: [148, -18.2],
-        zoom: 3.92,
+        zoom: 3.9,
         speed: 0.5
     },
     '2016second': {
@@ -60,12 +60,12 @@ var locationsLaptop = {
     },
     '2002': {
         center: [148, -18],
-        zoom: 4.51,
+        zoom: 4.5,
         speed: 0.5
     },
     '2016': {
         center: [148, -18],
-        zoom: 4.52,
+        zoom: 4.5,
         speed: 0.5
     },
     '2016second': {
@@ -98,12 +98,12 @@ var locationsDesktop = {
     },
     '2002': {
         center: [148, -18.1],
-        zoom: 4.71,
+        zoom: 4.7,
         speed: 0.5
     },
     '2016': {
         center: [148, -18.1],
-        zoom: 4.72,
+        zoom: 4.7,
         speed: 0.5
     },
     '2016second': {
@@ -136,12 +136,12 @@ var locationsRetina = {
     },
     '2002': {
         center: [148, -18.1],
-        zoom: 5.01,
+        zoom: 5,
         speed: 0.5
     },
     '2016': {
         center: [148, -18.1],
-        zoom: 5.02,
+        zoom: 5,
         speed: 0.5
     },
     '2016second': {

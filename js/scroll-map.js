@@ -179,5 +179,4 @@ function updateMap (sectionName) {
         map.setLayoutProperty('gbr-features', 'visibility', 'visible');
     }
 
-
 }
