@@ -162,7 +162,9 @@ const observer = lozad();
 observer.observe();
 
 // scroll to top on window reload
-$(document).scrollTop(0);
+window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};
 
 // SET ELEMENT HEIGHTS
 let screenHeight = $(window).height();
