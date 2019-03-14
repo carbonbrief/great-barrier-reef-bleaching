@@ -12,13 +12,13 @@ if (!mapboxgl.supported()) {
 
 function initialZoom () {
     if (screenHeight > 900) {
-        return 4;
+        return 4.4;
     } else if (screenHeight < 901 && screenHeight > 700) {
-        return 3.7;
+        return 4.2;
     } else if (screenHeight < 701 && screenHeight > 500) {
-        return 3.4;
+        return 4;
     } else {
-        return 3.1;
+        return 3.4;
     }
 }
 

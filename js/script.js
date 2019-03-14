@@ -7,7 +7,7 @@ const $map = $('#map');
 var locationsMobile = {
     'Intro1': {
         center: [145.7, -17.8],
-        zoom: 3.1,
+        zoom: 3.4,
         speed: 0.5
     },
     'Intro2': {
@@ -45,12 +45,12 @@ var locationsMobile = {
 var locationsLaptop = {
     'Intro1': {
         center: [145.7, -17.8],
-        zoom: 3.4,
+        zoom: 4,
         speed: 0.5
     },
     'Intro2': {
         center: [148, -17.8],
-        zoom: 3.9,
+        zoom: 4.1,
         speed: 0.5
     },
     '1998': {
@@ -70,7 +70,7 @@ var locationsLaptop = {
     },
     '2016second': {
         center: [144, -14],
-        zoom: 6,
+        zoom: 5.2,
         speed: 0.8
     },
     '2017': {
@@ -83,12 +83,12 @@ var locationsLaptop = {
 var locationsDesktop = {
     'Intro1': {
         center: [145.7, -17.8],
-        zoom: 3.7,
+        zoom: 4.2,
         speed: 0.5
     },
     'Intro2': {
         center: [148, -17.8],
-        zoom: 4.2,
+        zoom: 4.3,
         speed: 0.5
     },
     '1998': {
@@ -108,7 +108,7 @@ var locationsDesktop = {
     },
     '2016second': {
         center: [144, -14],
-        zoom: 6,
+        zoom: 5.3,
         speed: 0.8
     },
     '2017': {
@@ -121,7 +121,7 @@ var locationsDesktop = {
 var locationsRetina = {
     'Intro1': {
         center: [145.7, -17.8],
-        zoom: 4,
+        zoom: 4.4,
         speed: 0.5
     },
     'Intro2': {
@@ -146,7 +146,7 @@ var locationsRetina = {
     },
     '2016second': {
         center: [144, -14],
-        zoom: 6,
+        zoom: 5.5,
         speed: 0.8
     },
     '2017': {
@@ -286,16 +286,16 @@ $(document).ready(function() {
                     window[graphFunction]();
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
-                        console.log(locationsRetina[sectionName]);
+                        // console.log(locationsRetina[sectionName]);
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
-                        console.log(locationsDesktop[sectionName]);
+                        // console.log(locationsDesktop[sectionName]);
                     } else if (screenHeight < 701 && screenHeight > 550) {
                         map.flyTo(locationsLaptop[sectionName]);
-                        console.log(locationsLaptop[sectionName]);
+                        // console.log(locationsLaptop[sectionName]);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
-                        console.log(locationsMobile[sectionName]);
+                        // console.log(locationsMobile[sectionName]);
                     };
                     updateMap(sectionName);
                 } else {
@@ -315,16 +315,16 @@ $(document).ready(function() {
                     window[graphFunction]();
                     if (screenHeight > 900) {
                         map.flyTo(locationsRetina[sectionName]);
-                        console.log(locationsRetina[sectionName]);
+                        // console.log(locationsRetina[sectionName]);
                     } else if (screenHeight < 901 && screenHeight > 700) {
                         map.flyTo(locationsDesktop[sectionName]);
-                        console.log(locationsDesktop[sectionName]);
+                        // console.log(locationsDesktop[sectionName]);
                     } else if (screenHeight < 701 && screenHeight > 550) {
                         map.flyTo(locationsLaptop[sectionName]);
-                        console.log(locationsLaptop[sectionName]);
+                        // console.log(locationsLaptop[sectionName]);
                     } else {
                         map.flyTo(locationsMobile[sectionName]);
-                        console.log(locationsMobile[sectionName]);
+                        // console.log(locationsMobile[sectionName]);
                     };
                     updateMap(sectionName);
                 }
