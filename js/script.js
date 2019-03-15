@@ -336,30 +336,38 @@ $(document).ready(function() {
 
     // autoplay ocean acidification animation
 
-    let $Acid = document.getElementById("acidification");
+    let $Vid = $(".video");
 
-    var acidBottom = new Waypoint({
-        element: $Acid,
-        handler: function(direction) {
-            if (direction == "down") {
-                $Acid.play();
-            } else {
-                $Acid.pause();
-            }
-        },
-        offset: "50%"
-    });
+    $Vid.each(function(){
 
-    var acidTop = new Waypoint({
-        element: $Acid,
-        handler: function(direction) {
-            if (direction == "up") {
-                $Acid.play();
-            } else {
-                $Acid.pause();
-            }
-        },
-        offset: "-20%"
+        let _this = this;
+
+        var vidBottom = new Waypoint({
+            element: _this,
+            handler: function(direction) {
+                if (direction == "down") {
+                    _this.play();
+                    console.log("play");
+                } else {
+                    _this.pause();
+                    console.log("pause");
+                }
+            },
+            offset: "50%"
+        });
+    
+        var vidTop = new Waypoint({
+            element: _this,
+            handler: function(direction) {
+                if (direction == "up") {
+                    _this.play();
+                } else {
+                    _this.pause();
+                }
+            },
+            offset: "-30%"
+        });
+
     });
 
 });

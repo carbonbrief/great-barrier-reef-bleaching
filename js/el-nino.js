@@ -16,7 +16,7 @@ function changeIframeSrc (screenWidth) {
         iframe.attr('data-src',path + "mobile-small.html");   
 
     }
-}
+};
 
 changeIframeSrc(screenWidth);
 
