@@ -347,10 +347,8 @@ $(document).ready(function() {
             handler: function(direction) {
                 if (direction == "down") {
                     _this.play();
-                    console.log("play");
                 } else {
                     _this.pause();
-                    console.log("pause");
                 }
             },
             offset: "50%"
